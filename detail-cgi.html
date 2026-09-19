@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Intern - CGI Creative Lab</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body class="detail-page-body">
+
+    <!-- Background Interaktif -->
+    <div id="particles-js"></div>
+
+    <!-- Mini Navbar Khusus Halaman Detail -->
+    <nav class="detail-nav">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> <span class="divider">/</span> <span class="current">Work Experience</span>
+        </div>
+        <div class="nav-actions">
+            <a href="index.html#work" class="btn-back">⬅ Back to Home</a>
+            <a href="index.html#contact" class="nav-contact-btn">Contact Me</a>
+        </div>
+    </nav>
+
+    <!-- Main Content Detail -->
+    <section class="detail-section">
+        
+        <!-- HERO BANNER (Sama persis dengan Ambivers) -->
+        <div class="detail-banner">
+            <div class="banner-badge">FINANCIAL ADMINISTRATION</div>
+            <h1 class="banner-title">Finance Intern</h1>
+            <p class="banner-company">CGI Creative Lab</p>
+            <div class="banner-date">
+                <span class="icon">📅</span> Jun 2026 - Sep 2026 : Official Internship Term
+            </div>
+        </div>
+
+        <!-- SPOTLIGHT CONTENT (Layout simpel sesuai foto) -->
+        <div class="detail-content-area" style="margin-top: 50px;">
+            <div class="spotlight-card">
+                <div class="spotlight-text">
+                    <span class="pre-title">EXPERIENCE SPOTLIGHT</span>
+                    <h2>Finance Intern</h2>
+                    <p>Managed core financial administration and cash flow operations for the company. Responsibilities included generating systematic client invoices, issuing Receipts of Payment (ROP), and accurately recording daily financial journal entries. Developed comprehensive financial statements to meticulously track all company income and operational expenditures, ensuring transparent, highly organized, and reliable financial reporting.</p>
+                </div>
+                <div class="spotlight-img">
+                    <img src="foto dokum cgi.jpeg" onerror="this.src='https://via.placeholder.com/500x350/fdf2f8/f472b6?text=Finance+Intern+Visualization'">
+                </div>
+            </div>
+        </div>
+
+        <!-- DOCUMENTATION GALLERY (Cukup 2 Foto) -->
+        <div class="detail-gallery-area" style="margin-top: 80px;">
+            <p class="pre-title">VISUAL EVIDENCE</p>
+            <h2 class="section-title">Documentation Gallery</h2>
+            <p class="section-subtitle" style="margin-bottom: 40px;">Financial reporting visuals and administrative documentation.</p>
+
+            <!-- Grid diubah menjadi 2 kolom khusus untuk halaman ini -->
+            <div class="gallery-grid" style="grid-template-columns: repeat(2, 1fr);">
+                
+                <!-- Foto 1 -->
+                <div class="gallery-card">
+                    <div class="gallery-img">
+                        <img src="foto dokum cgi financial.jfif" onerror="this.src='https://via.placeholder.com/500x300/fce7f3/f472b6?text=Financial+Statements'">
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Financial Statements & Journal</h4>
+                        <p>Detailed tracking of company income and operational expenditures.</p>
+                    </div>
+                </div>
+
+                <!-- Foto 2 -->
+                <div class="gallery-card">
+                    <div class="gallery-img">
+                        <img src="foto dokum cgi rop.png" onerror="this.src='https://via.placeholder.com/500x300/fce7f3/f472b6?text=Invoicing+Process'">
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Invoicing & ROP Operations</h4>
+                        <p>Generating systematic client invoices and official receipts of payment.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <footer style="margin-top: 50px;">
+        <p>&copy; 2026 Khairunnisa Najla. Designed with passion.</p>
+    </footer>
+
+    <!-- Script Particles Sama Dengan Home -->
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 50, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": ["#f472b6", "#0f172a"] },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.3, "random": false },
+                "size": { "value": 4, "random": true },
+                "line_linked": { "enable": true, "distance": 150, "color": "#f472b6", "opacity": 0.2, "width": 1 },
+                "move": { "enable": true, "speed": 1.5, "direction": "none" }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": { "onhover": { "enable": true, "mode": "grab" } },
+                "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 0.8 } } }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninety Campus Expo - PR | Khairunnisa Najla</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body class="detail-page-body">
+
+    <!-- Background Interaktif Partikel -->
+    <div id="particles-js"></div>
+
+    <!-- Navbar -->
+    <nav class="detail-nav">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> <span class="divider">/</span> <span class="current">Organization</span>
+        </div>
+        <div class="nav-actions">
+            <a href="index.html#organization" class="btn-back">⬅ Back to Home</a>
+            <a href="index.html#contact" class="nav-contact-btn">Contact Me</a>
+        </div>
+    </nav>
+
+    <!-- Konten Utama -->
+    <section class="detail-section" style="max-width: 100%; padding: 100px 0 80px 0;">
+        <div style="max-width: 1000px; margin: 0 auto; padding: 0 5%;">
+            
+            <!-- Banner Judul -->
+            <div class="detail-banner" style="margin-bottom: 30px; text-align: center;">
+                <div class="banner-badge">EVENT MANAGEMENT & PARTNERSHIP</div>
+                <h1 class="banner-title">Ninety Campus Expo</h1>
+                <p class="banner-company">Head of Public Relations</p>
+            </div>
+
+            <!-- Kotak Deskripsi (Sudah otomatis punya efek hover berubah warna ke Soft Pink!) -->
+            <div class="pih-description-box" style="margin-bottom: 50px;">
+                <h2 style="color: var(--navy); margin-bottom: 15px;">Event Overview</h2>
+                <p>As the Head of Public Relations for the Ninety Campus Expo, I directed all external communications, media partnerships, and public engagement strategies. My team and I ensured maximum visibility for the event, bridging the connection between high school students, universities, and sponsors.</p>
+                <ul style="margin-top: 15px; padding-left: 20px; color: var(--navy-light); line-height: 1.8;">
+                    <li>Managed social media campaigns and digital content distribution.</li>
+                    <li>Secured and maintained mutually beneficial relationships with media partners.</li>
+                    <li>Coordinated with the internal committee to align messaging and public announcements.</li>
+                </ul>
+            </div>
+
+            <!-- Galeri 3 Foto (Bisa di-klik untuk Zoom) -->
+            <h3 style="color: var(--navy); margin-bottom: 25px; text-align: center;">Documentation</h3>
+            <div class="zoom-gallery-grid">
+                <img src="foto dokum nce.jpeg" onerror="this.src='https://via.placeholder.com/600x400/fce7f3/f472b6?text=Expo+Photo+1'" alt="Expo 1" class="zoomable-img">
+                <img src="foto dokum nce3.jpeg" onerror="this.src='https://via.placeholder.com/600x400/fce7f3/f472b6?text=Expo+Photo+2'" alt="Expo 2" class="zoomable-img">
+                <img src="foto dokum nce1.jpeg" onerror="this.src='https://via.placeholder.com/600x400/fce7f3/f472b6?text=Expo+Photo+3'" alt="Expo 3" class="zoomable-img">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Elemen Modal (Lightbox) Untuk Zoom Foto -->
+    <div id="imageModal" class="image-modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="zoomedImg">
+    </div>
+
+    <!-- Scripts Khusus Halaman Ini -->
+    <script>
+        // 1. Script Partikel Background
+        particlesJS("particles-js", {
+            "particles": { "number": { "value": 50 }, "color": { "value": ["#f472b6", "#0f172a"] }, "shape": { "type": "circle" }, "opacity": { "value": 0.3 }, "size": { "value": 4, "random": true }, "line_linked": { "enable": true, "distance": 150, "color": "#f472b6", "opacity": 0.2, "width": 1 }, "move": { "enable": true, "speed": 1.5 } },
+            "interactivity": { "events": { "onhover": { "enable": true, "mode": "grab" } }, "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 0.8 } } } }, "retina_detect": true
+        });
+
+        // 2. Script Klik untuk Zoom Foto
+        const modal = document.getElementById("imageModal");
+        const zoomedImg = document.getElementById("zoomedImg");
+        const images = document.querySelectorAll(".zoomable-img");
+        const closeBtn = document.querySelector(".close-modal");
+
+        // Buka modal saat foto diklik
+        images.forEach(img => {
+            img.addEventListener("click", function() {
+                modal.style.display = "flex";
+                zoomedImg.src = this.src;
+            });
+        });
+
+        // Tutup modal saat tombol 'X' atau area hitam diklik
+        closeBtn.addEventListener("click", () => { modal.style.display = "none"; });
+        modal.addEventListener("click", (e) => { 
+            if(e.target === modal) modal.style.display = "none"; 
+        });
+    </script>
+</body>
+</html>

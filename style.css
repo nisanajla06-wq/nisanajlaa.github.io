@@ -1,0 +1,2261 @@
+/* Color Palette & Setup */
+:root {
+    --soft-pink: #fdf2f8; 
+    --pink-accent: #f472b6; 
+    --pink-light: #fce7f3;
+    --navy: #0f172a; 
+    --navy-light: #334155; 
+    --white: #ffffff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+body { background-color: var(--soft-pink); color: var(--navy); overflow-x: hidden; position: relative; }
+#particles-js { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; background: linear-gradient(135deg, #fff0f5 0%, #ffffff 100%); }
+h1, h2, h3, h4 { color: var(--navy); }
+
+/* Navigation */
+nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 50px; background: rgba(253, 242, 248, 0.95); backdrop-filter: blur(12px); position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(244, 114, 182, 0.08); }
+.logo { font-size: 1.8rem; font-weight: 800; color: var(--navy); }
+.nav-links { list-style: none; display: flex; gap: 30px; align-items: center; }
+.nav-links a { color: var(--navy-light); text-decoration: none; font-size: 0.9rem; font-weight: 600; position: relative; transition: 0.3s; }
+.nav-links a::after { content: ''; position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%) scale(0); width: 6px; height: 6px; background: var(--pink-accent); border-radius: 50%; transition: 0.3s; }
+.nav-links a:hover, .nav-links a.active { color: var(--pink-accent); }
+.nav-links a:hover::after, .nav-links a.active::after { transform: translateX(-50%) scale(1); }
+.nav-contact-btn { background: var(--navy); color: var(--white) !important; padding: 10px 25px; border-radius: 30px; transition: 0.3s; }
+.nav-contact-btn:hover { background: var(--pink-accent); transform: translateY(-3px); }
+
+/* Layout Utama */
+section { 
+    padding: 100px 5% 60px; /* Jarak Kiri Kanan Aman */
+    max-width: 1200px; /* Mencegah melebar sampai ujung layar */
+    margin: 0 auto; 
+    min-height: auto; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+}
+#home { min-height: 100vh; }
+.section-title { font-size: 2.2rem; margin-bottom: 30px; position: relative; display: inline-block; }
+.section-title::after { content: ''; display: block; width: 60px; height: 4px; background: var(--pink-accent); margin-top: 10px; border-radius: 2px; }
+
+/* Home & About */
+.hero { display: flex; align-items: center; justify-content: space-between; }
+.greeting { color: var(--pink-accent); font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
+.hero-text h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 15px; }
+.hero-text .role-desc { font-size: 1.1rem; color: var(--navy-light); margin-bottom: 30px; }
+.highlight { color: var(--navy); position: relative; z-index: 1; }
+.highlight::after { content: ''; position: absolute; bottom: 5px; left: 0; width: 100%; height: 20px; background: rgba(244, 114, 182, 0.3); z-index: -1; transform: skewX(-15deg); }
+.btn { display: inline-block; padding: 12px 30px; background: var(--navy); color: var(--white); border-radius: 30px; text-decoration: none; font-weight: 600; transition: 0.3s; }
+.btn:hover { background: var(--pink-accent); transform: translateY(-5px); }
+
+/* =========================================
+   HOME & NAMETAG (Pasti di Samping & Rapi)
+   ========================================= */
+.hero { 
+    display: flex; 
+    flex-direction: row; 
+    align-items: center; 
+    justify-content: space-between; 
+    gap: 40px;
+    width: 100%;
+}
+
+.hero-text {
+    flex: 1; /* Mengambil ruang fleksibel di sebelah kiri */
+    max-width: 600px;
+}
+
+.greeting { 
+    color: var(--pink-accent); 
+    font-weight: 600; 
+    letter-spacing: 2px; 
+    text-transform: uppercase; 
+    margin-bottom: 10px; 
+}
+
+.hero-text h1 { 
+    font-size: 3.5rem; 
+    line-height: 1.1; 
+    margin-bottom: 15px; 
+}
+
+.hero-text .role-desc { 
+    font-size: 1.1rem; 
+    color: var(--navy-light); 
+    margin-bottom: 30px; 
+}
+
+.highlight { 
+    color: var(--navy); 
+    position: relative; 
+    z-index: 1; 
+}
+
+.highlight::after { 
+    content: ''; 
+    position: absolute; 
+    bottom: 5px; 
+    left: 0; 
+    width: 100%; 
+    height: 20px; 
+    background: rgba(244, 114, 182, 0.3); 
+    z-index: -1; 
+    transform: skewX(-15deg); 
+}
+
+.btn { 
+    display: inline-block; 
+    padding: 12px 30px; 
+    background: var(--navy); 
+    color: var(--white); 
+    border-radius: 30px; 
+    text-decoration: none; 
+    font-weight: 600; 
+    transition: 0.3s; 
+}
+
+.btn:hover { 
+    background: var(--pink-accent); 
+    transform: translateY(-5px); 
+}
+
+/* ID Card / Nametag Styling (Persis seperti yang kamu berikan) */
+.nametag-container { 
+    position: relative; 
+    perspective: 1000px; 
+    margin-right: 20px; 
+    flex-shrink: 0; /* Mencegah ID Card ikut menyusut */
+}
+
+.lanyard { 
+    width: 8px; 
+    height: 120px; 
+    background: var(--navy); 
+    margin: 0 auto; 
+    border-radius: 4px; 
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2); 
+}
+
+.nametag { 
+    background: var(--white); 
+    width: 260px; 
+    height: 380px; 
+    border-radius: 15px; 
+    padding: 15px; 
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1), 0 0 0 4px var(--soft-pink); 
+    transform-origin: top center; 
+    animation: swing 4s infinite ease-in-out; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    border: 1px solid rgba(0,0,0,0.05); 
+}
+
+.nametag:hover { 
+    animation-play-state: paused; 
+    transform: rotate(0deg) scale(1.05) translateY(-10px); 
+    transition: 0.4s; 
+}
+
+.nametag-hole { 
+    width: 60px; 
+    height: 12px; 
+    background: var(--soft-pink); 
+    border-radius: 10px; 
+    margin-bottom: 15px; 
+}
+
+.nametag-photo { 
+    width: 100%; 
+    flex-grow: 1; 
+    border-radius: 10px; 
+    overflow: hidden; 
+    background: var(--soft-pink); 
+}
+
+.nametag-photo img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+.nametag-footer { 
+    margin-top: 15px; 
+    font-weight: 800; 
+    color: var(--navy); 
+    letter-spacing: 2px; 
+}
+
+@keyframes swing { 
+    0%, 100% { transform: rotate(4deg); } 
+    50% { transform: rotate(-4deg); } 
+}
+
+/* Cards & Hover Global */
+.summary-box, .skill-box, .edu-card, .cert-card { transition: 0.4s ease; background: var(--white); border-radius: 15px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
+.summary-box:hover, .skill-box:hover, .edu-card:hover, .cert-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(244, 114, 182, 0.15); }
+
+.about-content { display: flex; flex-direction: column; gap: 30px; }
+.summary-box { border-left: 5px solid var(--pink-accent); }
+.skills-container { display: flex; gap: 30px; flex-wrap: wrap; }
+.skill-box { flex: 1; min-width: 300px; }
+.skill-box ul { list-style: none; margin-top: 15px; }
+.skill-box ul li { margin-bottom: 12px; padding-left: 25px; position: relative; font-weight: 500; transition: 0.3s; }
+.skill-box ul li:hover { transform: translateX(5px); color: var(--pink-accent); }
+.skill-box ul li::before { content: "✦"; position: absolute; left: 0; color: var(--pink-accent); }
+
+/* Tools Marquee */
+.tools-section { margin: 10px auto 40px auto; width: 100%; max-width: 900px; }
+.tools-title { color: var(--pink-accent); font-size: 0.9rem; font-weight: 800; text-transform: uppercase; margin-bottom: 20px; }
+.tools-marquee { overflow: hidden; background: var(--white); padding: 25px 0; border-radius: 20px; position: relative; display: flex; align-items: center; }
+.marquee-fade-left, .marquee-fade-right { position: absolute; top: 0; width: 60px; height: 100%; z-index: 2; pointer-events: none; }
+.marquee-fade-left { left: 0; background: linear-gradient(to right, var(--white) 0%, transparent 100%); }
+.marquee-fade-right { right: 0; background: linear-gradient(to left, var(--white) 0%, transparent 100%); }
+.tools-track { display: flex; gap: 30px; width: max-content; animation: scroll-tools 20s linear infinite; padding: 0 15px; }
+.tools-track:hover { animation-play-state: paused; }
+.tool-item { display: flex; flex-direction: column; align-items: center; background: var(--soft-pink); padding: 15px 20px; border-radius: 15px; min-width: 120px; transition: 0.3s; }
+.tool-item:hover { transform: translateY(-8px) scale(1.05); background: var(--pink-light); }
+.tool-item img { width: 45px; height: 45px; object-fit: contain; margin-bottom: 8px; }
+.tool-item span { font-size: 0.85rem; font-weight: 700; color: var(--navy); }
+@keyframes scroll-tools { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-50% - 15px)); } }
+
+/* Education */
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.edu-card { border-top: 4px solid var(--navy); }
+.edu-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
+.edu-logo { width: 50px; height: 50px; object-fit: contain; background: var(--soft-pink); padding: 5px; border-radius: 8px; transition: 0.4s; }
+.edu-card:hover .edu-logo { transform: scale(1.1) rotate(5deg); }
+.edu-year { background: var(--soft-pink); color: var(--pink-accent); padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; display: inline-block; margin-top: 5px; }
+.edu-univ { color: var(--pink-accent); font-weight: 600; margin-bottom: 10px; }
+
+/* Timeline & Horizontal Cards */
+.pre-title { color: var(--pink-accent); font-size: 0.9rem; font-weight: 800; letter-spacing: 2px; margin-bottom: 10px; }
+.section-subtitle { color: var(--navy-light); font-size: 1.1rem; margin-bottom: 40px; }
+.timeline-container { position: relative; display: flex; flex-direction: column; gap: 30px; padding-left: 10px; }
+.timeline-container::before { content: ''; position: absolute; left: 29px; top: 0; bottom: 0; width: 2px; background: var(--pink-light); z-index: -1; }
+.timeline-row { display: flex; align-items: flex-start; gap: 30px; }
+.timeline-num { background: var(--soft-pink); color: var(--pink-accent); font-weight: 700; width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; border: 3px solid var(--white); flex-shrink: 0; margin-top: 20px; }
+
+.org-container { display: flex; flex-direction: column; gap: 35px; }
+.horizontal-card { background: var(--white); border-radius: 20px; padding: 30px; display: flex; align-items: center; gap: 25px; width: 100%; transition: 0.4s ease; text-decoration: none !important; color: var(--navy); cursor: pointer; box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
+.horizontal-card * { text-decoration: none !important; }
+.horizontal-card:hover { transform: translateX(8px); box-shadow: 0 15px 35px rgba(244, 114, 182, 0.12); }
+.h-logo { width: 70px; height: 70px; border-radius: 12px; background: var(--soft-pink); display: flex; justify-content: center; align-items: center; flex-shrink: 0; transition: 0.4s; }
+.horizontal-card:hover .h-logo { transform: scale(1.05); }
+.h-logo img { width: 100%; height: 100%; object-fit: contain; padding: 10px; }
+.h-content { flex-grow: 1; }
+.h-date { font-size: 0.8rem; color: var(--navy-light); font-weight: 500; display: block; margin-bottom: 5px; }
+.h-company { font-weight: 600; color: var(--pink-accent); font-size: 0.9rem; margin-bottom: 10px; }
+.h-desc { font-size: 0.9rem; color: var(--navy-light); }
+.h-tags { display: flex; flex-direction: column; gap: 8px; flex-shrink: 0; width: 150px; }
+.h-tags span { font-size: 0.75rem; background: var(--soft-pink); color: var(--pink-accent); padding: 6px 12px; border-radius: 8px; text-align: center; font-weight: 500; transition: 0.3s; }
+.h-tags span:hover { transform: scale(1.05); background: var(--pink-accent); color: var(--white); }
+.h-stats, .h-middle-stats { display: flex; flex-direction: column; gap: 10px; flex-shrink: 0; width: 130px; }
+.stat-item { font-size: 0.75rem; color: var(--navy-light); background: var(--soft-pink); padding: 8px; border-radius: 8px; text-align: center; }
+.stat-item strong { font-size: 1.1rem; color: var(--pink-accent); }
+.stat-box-pink { background: var(--pink-light); border-radius: 12px; padding: 15px 10px; text-align: center; color: var(--navy-light); }
+.stat-box-pink strong { color: var(--pink-accent); font-size: 1.5rem; }
+
+.h-action-container { display: flex; align-items: center; gap: 10px; flex-shrink: 0; width: 130px; justify-content: flex-end; transition: 0.4s; }
+.horizontal-card:hover .h-action-container { transform: translateY(-6px); }
+.view-text { font-size: 0.85rem; font-weight: 600; color: var(--pink-accent); }
+.h-action-btn { display: flex; justify-content: center; align-items: center; width: 35px; height: 35px; background: var(--pink-accent); color: var(--white) !important; border-radius: 50%; transition: 0.4s; }
+.horizontal-card:hover .h-action-btn { background: #db2777; transform: scale(1.15); box-shadow: 0 5px 15px rgba(244, 114, 182, 0.4); }
+.highlight-card { border: 2px solid rgba(244, 114, 182, 0.3); background: linear-gradient(to right, #ffffff, #fdf2f8); }
+
+/* Other Committees Box */
+.other-committees-box { margin-top: 15px; background: var(--pink-light); border-radius: 15px; padding: 15px; display: flex; align-items: center; gap: 15px; transition: 0.4s; cursor: pointer; }
+.other-committees-box:hover { transform: translateY(-5px); background: var(--white); box-shadow: 0 10px 20px rgba(244, 114, 182, 0.1); }
+.oc-icon-box { background: var(--white); padding: 10px; border-radius: 10px; font-size: 1.5rem; }
+.oc-text strong { display: block; color: var(--navy); font-size: 0.95rem; }
+.oc-text span { font-size: 0.8rem; color: var(--navy-light); }
+.oc-btn { background: var(--white); color: var(--pink-accent); padding: 8px 18px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; transition: 0.3s; }
+.oc-btn:hover { background: var(--pink-accent); color: var(--white); }
+
+/* Certifications */
+.cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+.cert-card { display: flex; flex-direction: column; overflow: hidden; padding: 0; }
+.cert-img-container { height: 180px; overflow: hidden; }
+.cert-img-container img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+.cert-card:hover .cert-img-container img { transform: scale(1.1); }
+.cert-info { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
+.cert-info h4 { margin-bottom: 5px; }
+.cert-info p { font-size: 0.85rem; color: var(--navy-light); margin-bottom: 20px; }
+.btn-cert { background: var(--soft-pink); color: var(--pink-accent); padding: 10px; border-radius: 8px; text-align: center; text-decoration: none; font-size: 0.85rem; font-weight: 600; margin-top: auto; transition: 0.3s; border: 1px solid var(--pink-accent); }
+.btn-cert:hover { background: var(--pink-accent); color: var(--white); transform: translateY(-3px); }
+
+/* Achievements Dashboard (Compact) */
+.ach-dashboard { background: var(--white); border-radius: 20px; padding: 30px; display: flex; gap: 30px; align-items: center; box-shadow: 0 10px 30px rgba(0,0,0,0.03); transition: 0.4s; }
+.ach-dashboard:hover { transform: translateY(-8px); box-shadow: 0 25px 50px rgba(244, 114, 182, 0.15); }
+.ach-left { flex: 2; display: flex; flex-direction: column; }
+.ach-title { font-size: 1.3rem; margin-bottom: 15px; }
+.ach-list { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+.ach-list li { display: flex; gap: 12px; padding: 8px 12px; border-radius: 10px; transition: 0.3s; }
+.ach-list li:hover { transform: translateX(10px); background: var(--soft-pink); }
+.ach-medal { font-size: 1.25rem; transition: 0.3s; }
+.ach-list li:hover .ach-medal { transform: scale(1.2) rotate(10deg); }
+.ach-text { font-size: 0.85rem; color: var(--navy-light); line-height: 1.4; }
+.ach-text span { font-size: 0.75rem; color: #94a3b8; display: block; }
+.ach-link-bottom { margin-top: auto; color: var(--pink-accent); font-weight: 600; font-size: 0.85rem; text-decoration: none; padding: 8px 15px; background: var(--soft-pink); border-radius: 10px; display: inline-block; width: fit-content; transition: 0.3s; }
+.ach-link-bottom:hover { background: var(--pink-accent); color: var(--white); transform: translateX(5px); }
+.ach-right { flex: 1.2; }
+.ach-image-box { background: #f8fafc; border-radius: 15px; padding: 8px; text-align: center; border: 1px solid #e2e8f0; transition: 0.4s; }
+.ach-dashboard:hover .ach-image-box { transform: scale(1.02); }
+.ach-image-box img { width: 100%; border-radius: 8px; margin-bottom: 8px; }
+.ach-caption { font-size: 0.75rem; color: var(--navy-light); font-weight: 500; }
+
+/* =========================================
+   DURABILITY & HOVER EFFECTS (Memantul & Keluar Kotak)
+   ========================================= */
+.summary-box, .skill-box, .edu-card, .cert-card, .speak-card, .speaking-featured {
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease !important;
+}
+
+.summary-box:hover, .skill-box:hover, .edu-card:hover, .cert-card:hover, .speak-card:hover, .speaking-featured:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(244, 114, 182, 0.15) !important;
+    border-color: rgba(244, 114, 182, 0.4);
+}
+
+/* =========================================
+   SPEAKING ENGAGEMENT (MC Lebar + 2 Pemateri Sebelahan)
+   ========================================= */
+.speaking-featured { 
+    background: var(--white); 
+    padding: 30px; 
+    border-radius: 20px; 
+    display: flex; 
+    align-items: center; 
+    gap: 25px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03); 
+    border-left: 5px solid var(--pink-accent); 
+    border: 1px solid rgba(244, 114, 182, 0.05);
+    text-decoration: none !important;
+    color: var(--navy);
+    margin-bottom: 30px;
+}
+.speaking-featured:hover {
+    transform: translateX(8px);
+    box-shadow: 0 15px 35px rgba(244, 114, 182, 0.12);
+}
+
+/* Mengatur 2 Kotak Pemateri Sebelahan (Grid 2 Kolom) */
+.speaking-grid { 
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); /* Pastikan selalu 2 kolom berdampingan */
+    gap: 30px; 
+}
+
+.speak-card { 
+    background: var(--white); 
+    padding: 30px; 
+    border-radius: 20px; 
+    display: flex; 
+    flex-direction: column; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03); 
+    border: 1px solid rgba(244, 114, 182, 0.05);
+}
+
+/* Efek Emoticon/Ikon "Keluar Kotak" & Memantul Dinamis */
+.speak-icon { 
+    font-size: 2.2rem; 
+    margin-bottom: 15px; 
+    display: inline-block; 
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+}
+
+.speak-card:hover .speak-icon { 
+    transform: translateY(-8px) scale(1.25) rotate(12deg); /* Emotikon melompat ke atas/keluar kotak */
+}
+
+.speak-card h4 { 
+    margin-bottom: 10px; 
+    color: var(--navy);
+}
+
+.speak-card p { 
+    font-size: 0.9rem; 
+    color: var(--navy-light); 
+    line-height: 1.6; 
+    margin-bottom: 20px; 
+    flex-grow: 1; 
+}
+
+.speak-card .btn-cert {
+    display: inline-block;
+    background: var(--soft-pink);
+    color: var(--pink-accent);
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-align: center;
+    border: 1px solid var(--pink-accent);
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.speak-card .btn-cert:hover {
+    background: var(--pink-accent);
+    color: var(--white);
+    transform: translateY(-3px);
+}
+
+/* Responsif untuk layar HP/Tablet kecil agar tetap rapi */
+@media (max-width: 768px) {
+    .speaking-grid {
+        grid-template-columns: 1fr; /* Jadi 1 kolom jika dibuka di HP */
+    }
+}
+
+/* Contact */
+.contact-box { background: var(--navy); padding: 60px; border-radius: 20px; text-align: center; color: var(--white); transition: 0.4s; }
+.contact-box:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(15, 23, 42, 0.2); }
+.contact-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+.navy-btn { background: var(--pink-accent); color: var(--white); padding: 12px 25px; border-radius: 30px; text-decoration: none; font-weight: 600; transition: 0.3s; }
+.navy-btn:hover { background: #db2777; transform: translateY(-3px); }
+.outline-btn { background: transparent; color: var(--white); border: 2px solid var(--white); padding: 12px 25px; border-radius: 30px; text-decoration: none; font-weight: 600; transition: 0.3s; }
+.outline-btn:hover { background: var(--white); color: var(--navy); transform: translateY(-3px); }
+
+footer { text-align: center; padding: 30px; font-size: 0.9rem; font-weight: 600; }
+
+/* Scroll Animasi Bawah ke Atas */
+.section-hidden { opacity: 0; transform: translateY(60px) scale(0.98); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+.section-visible { opacity: 1; transform: translateY(0) scale(1); }
+
+/* =========================================
+   SPLASH SCREEN / OPENING ANIMATION
+   ========================================= */
+body.no-scroll {
+    overflow: hidden; /* Mencegah user scroll saat loading belum selesai */
+}
+
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--navy); /* Background gelap elegan sesuai paletmu */
+    z-index: 99999; /* Pastikan selalu berada di paling atas menutupi navbar dll */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Transisi slide up ke atas yang sangat mulus */
+    transition: transform 1s cubic-bezier(0.86, 0, 0.07, 1), opacity 1s ease-in-out;
+}
+
+.splash-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.splash-title {
+    color: var(--white);
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    animation: pulse-text 2s infinite alternate;
+}
+
+.highlight-pink {
+    color: var(--pink-accent);
+}
+
+.loading-container {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    color: var(--pink-light);
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: -15px;
+}
+
+.loading-bar-bg {
+    width: 300px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.loading-bar-fill {
+    height: 100%;
+    width: 0%; /* Dimulai dari 0% */
+    background: var(--pink-accent);
+    border-radius: 10px;
+    transition: width 0.1s linear;
+    box-shadow: 0 0 15px var(--pink-accent);
+}
+
+/* Class ini akan dipanggil oleh JavaScript untuk menggeser layar ke atas */
+.splash-slide-up {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+@keyframes pulse-text {
+    0% { text-shadow: 0 0 10px rgba(244, 114, 182, 0.1); }
+    100% { text-shadow: 0 0 30px rgba(244, 114, 182, 0.5); }
+}
+
+/* Responsif untuk HP */
+@media (max-width: 768px) {
+    .splash-title { font-size: 2.2rem; }
+    .loading-container, .loading-bar-bg { width: 250px; }
+}
+/* =========================================
+   TYPING EFFECT CURSOR
+   ========================================= */
+.cursor {
+    display: inline-block;
+    color: var(--pink-accent); /* Warna kursor kedap-kedip */
+    font-weight: 800;
+    margin-left: 4px;
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* =========================================
+   DETAIL PAGE STYLES (MIRIP VIDEO KAFA)
+   ========================================= */
+.detail-page-body {
+    padding-top: 80px; /* Jarak dari top navbar */
+}
+
+/* Detail Navbar */
+.detail-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: rgba(253, 242, 248, 0.95);
+    backdrop-filter: blur(12px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(244, 114, 182, 0.08);
+}
+.breadcrumb { font-size: 0.9rem; font-weight: 600; color: var(--navy); }
+.breadcrumb a { color: var(--navy-light); text-decoration: none; transition: 0.3s; }
+.breadcrumb a:hover { color: var(--pink-accent); }
+.breadcrumb .divider { margin: 0 8px; color: #cbd5e1; }
+.breadcrumb .current { color: var(--pink-accent); }
+
+.nav-actions { display: flex; gap: 15px; align-items: center; }
+.btn-back { background: transparent; color: var(--navy); border: 1px solid var(--navy); padding: 8px 20px; border-radius: 30px; font-size: 0.85rem; font-weight: 600; text-decoration: none; transition: 0.3s; }
+.btn-back:hover { background: var(--navy); color: var(--white); transform: translateY(-2px); }
+
+/* Hero Banner */
+.detail-section { padding: 40px 5% 60px; max-width: 1200px; margin: 0 auto; }
+.detail-banner { 
+    background: var(--navy); 
+    border-radius: 25px; 
+    padding: 50px; 
+    color: var(--white); 
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+.detail-banner::before {
+    content: ''; position: absolute; top: -50%; left: -10%; width: 50%; height: 200%;
+    background: linear-gradient(to right, rgba(244,114,182,0.1), transparent);
+    transform: rotate(25deg); pointer-events: none;
+}
+.banner-badge { background: var(--white); color: var(--navy); display: inline-block; padding: 6px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: 800; letter-spacing: 1px; margin-bottom: 20px; }
+.banner-title { font-size: 3rem; margin-bottom: 10px; color: var(--white); }
+.banner-company { font-size: 1.2rem; color: var(--pink-light); margin-bottom: 25px; font-weight: 500; }
+.banner-date { background: rgba(255,255,255,0.1); display: inline-block; padding: 10px 25px; border-radius: 30px; font-size: 0.9rem; border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(5px); }
+
+/* Stats Row */
+.detail-stats-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+.stat-box {
+    flex: 1;
+    background: var(--white);
+    padding: 25px 20px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    border: 1px solid rgba(244, 114, 182, 0.05);
+    transition: transform 0.4s ease;
+}
+.stat-box:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(244, 114, 182, 0.1); }
+.stat-box h2 { font-size: 2.5rem; color: var(--pink-accent); margin-bottom: 5px; }
+.stat-box p { font-size: 0.8rem; font-weight: 700; color: var(--navy-light); letter-spacing: 1px; }
+
+/* Pillar Cards (Projects) */
+.pillar-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    gap: 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    border-left: 5px solid var(--pink-accent);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.pillar-card:hover { transform: translateX(10px); box-shadow: 0 15px 40px rgba(244, 114, 182, 0.1); }
+.pillar-num {
+    background: var(--soft-pink); color: var(--pink-accent); font-size: 1.5rem; font-weight: 800;
+    width: 60px; height: 60px; border-radius: 15px; display: flex; justify-content: center; align-items: center; flex-shrink: 0;
+}
+.pillar-text h4 { font-size: 1.3rem; margin-bottom: 10px; color: var(--navy); }
+.pillar-text p { 
+    font-size: 0.95rem; 
+    color: var(--navy-light); 
+    line-height: 1.7; 
+    margin-bottom: 25px; /* Tambahan jarak bawah agar tidak nempel dengan tombol deck */
+}
+
+/* Gallery */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+.gallery-card {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    transition: transform 0.4s ease;
+    cursor: pointer;
+}
+.gallery-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(244, 114, 182, 0.15); }
+.gallery-img { height: 200px; overflow: hidden; }
+.gallery-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s ease; }
+.gallery-card:hover .gallery-img img { transform: scale(1.1); }
+.gallery-info { padding: 25px; text-align: center; }
+.gallery-info h4 { font-size: 1.1rem; margin-bottom: 10px; }
+.gallery-info p { font-size: 0.85rem; color: var(--navy-light); line-height: 1.5; margin-bottom: 15px; }
+.zoom-text { font-size: 0.8rem; font-weight: 600; color: var(--pink-accent); }
+
+/* Responsif HP */
+@media (max-width: 900px) {
+    .detail-stats-container { flex-wrap: wrap; }
+    .stat-box { min-width: 45%; }
+    .pillar-card { flex-direction: column; gap: 15px; }
+    .gallery-grid { grid-template-columns: 1fr; }
+}
+/* =========================================
+   SPOTLIGHT CARD (Detail Halaman Simpel - CGI)
+   ========================================= */
+.spotlight-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    border: 1px solid rgba(244, 114, 182, 0.05);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+
+.spotlight-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(244, 114, 182, 0.15);
+}
+
+.spotlight-text {
+    flex: 1.2; /* Teks mengambil ruang sedikit lebih lebar */
+}
+
+.spotlight-text .pre-title {
+    display: inline-block;
+    background: var(--pink-light);
+    color: var(--pink-accent);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+}
+
+.spotlight-text h2 {
+    font-size: 2rem;
+    color: var(--navy);
+    margin-bottom: 20px;
+}
+
+.spotlight-text p {
+    font-size: 0.95rem;
+    color: var(--navy-light);
+    line-height: 1.8;
+}
+
+.spotlight-img {
+    flex: 1; /* Menjaga porsi seimbang dengan teks */
+    min-height: 320px; /* KUNCI: Memaksa kotak tetap sebesar ini walau foto tidak ada */
+    background: var(--pink-light); /* Warna cadangan agar tidak kosong putih */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    position: relative; /* Diperlukan agar foto di dalamnya pas menutupi kotak */
+}
+
+.spotlight-img img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+/* Responsif HP untuk Spotlight Card */
+@media (max-width: 900px) {
+    .spotlight-card {
+        flex-direction: column;
+        padding: 30px 20px;
+    }
+}
+
+/* =========================================
+   DETAIL PAGE: PIH UIN JAKARTA 
+   ========================================= */
+.pih-description-box {
+    background: var(--white);
+    padding: 30px 40px;
+    border-radius: 0 20px 20px 0;
+    border-left: 6px solid var(--pink-accent); /* Garis tepi sesuai referensi */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    margin-bottom: 20px;
+}
+
+.pih-description-box p {
+    font-size: 1.05rem;
+    color: var(--navy-light);
+    line-height: 1.8;
+}
+
+/* Memaksa Grid Sertifikat jadi 2 Kolom (Besar) */
+.cert-grid-2 {
+    grid-template-columns: repeat(2, 1fr) !important;
+}
+
+/* Memaksa Grid Dokumentasi jadi 4 Kolom (Kecil tapi banyak) */
+.doc-grid-4 {
+    grid-template-columns: repeat(4, 1fr) !important;
+}
+
+/* Penyesuaian Responsif untuk HP/Tablet */
+@media (max-width: 1024px) {
+    .doc-grid-4 { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 768px) {
+    .cert-grid-2, .doc-grid-4 { grid-template-columns: 1fr !important; }
+    .pih-description-box { padding: 25px; }
+}
+
+/* =========================================
+   HIMSI DETAIL: IG STAT BOX
+   ========================================= */
+.ig-stat-box {
+    cursor: pointer;
+    background: var(--pink-light);
+    border: 1px solid rgba(244, 114, 182, 0.3);
+}
+
+.ig-stat-box:hover {
+    background: var(--white);
+    border-color: var(--pink-accent);
+}
+
+.ig-stat-box p {
+    text-decoration: none !important;
+    transition: color 0.3s ease;
+}
+
+.ig-stat-box:hover p {
+    color: var(--navy) !important;
+}
+
+/* =========================================
+   DETAIL PAGE: BERISI STATS ROW
+   ========================================= */
+.berisi-stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.berisi-stat-item {
+    background: var(--soft-pink);
+    border: 1px solid rgba(244, 114, 182, 0.1);
+    border-radius: 15px;
+    padding: 30px 15px;
+    text-align: center;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.berisi-stat-item:hover {
+    transform: translateY(-8px);
+    background: var(--pink-light);
+    box-shadow: 0 15px 25px rgba(244, 114, 182, 0.15);
+    border-color: rgba(244, 114, 182, 0.3);
+}
+
+.berisi-stat-item h3 {
+    font-size: 2.2rem;
+    color: var(--pink-accent);
+    margin-bottom: 5px;
+}
+
+.berisi-stat-item p {
+    font-size: 0.9rem;
+    color: var(--navy-light);
+    font-weight: 600;
+}
+
+/* Responsif untuk HP */
+@media (max-width: 768px) {
+    .berisi-stats-row { 
+        grid-template-columns: 1fr; 
+    }
+}
+
+/* =========================================
+   PROKER CAROUSEL FINAL (KOKOH & PAS)
+   ========================================= */
+.proker-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 40px;
+    padding: 20px 5vw 60px 5vw; /* Jarak pas. Atas tidak terlalu jauh, bawah lega buat shadow */
+    cursor: grab;
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+    /* Dibuat auto agar pergerakan JavaScript tidak bertabrakan dengan CSS smooth */
+    scroll-behavior: auto; 
+}
+
+.proker-carousel::-webkit-scrollbar { display: none; }
+.proker-carousel:active { cursor: grabbing; }
+
+/* =========================================
+   CAROUSEL WRAPPER & INDIKATOR TITIK
+   ========================================= */
+.carousel-wrapper {
+    width: 100%;
+    display: block;
+    clear: both;
+}
+
+/* KOTAK SCROLL MENYAMPING */
+.proker-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 40px;
+    padding: 20px 5vw 40px 5vw;
+    cursor: grab;
+    scrollbar-width: none; 
+}
+.proker-carousel::-webkit-scrollbar { display: none; }
+.proker-carousel.active { cursor: grabbing; }
+
+/* =========================================
+   CAROUSEL WRAPPER & INDIKATOR TITIK
+   ========================================= */
+.carousel-wrapper {
+    width: 100%;
+    display: block;
+    clear: both;
+}
+
+.proker-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 40px;
+    padding: 20px 5vw 40px 5vw;
+    cursor: grab;
+    scrollbar-width: none; 
+}
+.proker-carousel::-webkit-scrollbar { display: none; }
+.proker-carousel.active { cursor: grabbing; }
+
+/* =========================================
+   PROKER SLIDE (TEKS ATAS, FOTO BAWAH SERAGAM)
+   ========================================= */
+.proker-slide-vertical {
+    flex: 0 0 650px; /* Lebar statis */
+    background: var(--white);
+    border-radius: 25px;
+    padding: 35px;
+    display: flex;
+    flex-direction: column; 
+    gap: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    border: 1px solid rgba(244, 114, 182, 0.05);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* INTERAKTIF: Berubah Soft Pink saat Disentuh */
+.proker-slide-vertical:hover {
+    transform: translateY(-8px) scale(1.01) !important;
+    background: var(--soft-pink) !important;
+    border-color: var(--pink-accent) !important;
+    box-shadow: 0 20px 40px rgba(244, 114, 182, 0.25) !important;
+}
+
+/* Teks dan Garis Pinggir Pink (Lebih Kecil & Estetik) */
+.proker-text-top {
+    width: 100%;
+}
+.proker-role { display: inline-block; background: var(--pink-light); color: var(--pink-accent); padding: 6px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px;}
+.proker-text-top h2 { font-size: 2rem; color: var(--navy); margin-bottom: 8px; line-height: 1.2; }
+.proker-date { font-size: 0.85rem; font-weight: 600; color: #94a3b8; margin-bottom: 5px; }
+
+/* AKSEN GARIS PINK PADA SEMUA DESKRIPSI */
+.proker-quote-desc {
+    border-left: 4px solid var(--pink-accent);
+    padding-left: 15px;
+    margin: 15px 0;
+}
+.proker-quote-desc .proker-desc {
+    font-size: 0.85rem; /* Ukuran font dikecilkan agar rapi */
+    color: var(--navy-light);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* =========================================
+   GALERI FOTO SERAGAM (ANTI GEPENG)
+   ========================================= */
+.proker-gallery-bottom {
+    width: 100%;
+    display: grid;
+    gap: 15px;
+}
+.proker-gallery-bottom img {
+    width: 100%;
+    object-fit: cover; /* Mencegah gambar lonjong/gepeng */
+    border-radius: 12px;
+    transition: 0.4s ease;
+    cursor: pointer;
+    border: 1px solid rgba(15, 23, 42, 0.05);
+}
+.proker-gallery-bottom img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    z-index: 2;
+    position: relative;
+    border-color: var(--pink-accent);
+}
+
+/* Aturan Grid Seragam (2, 3, dan 4 Foto) */
+.grid-equal-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+.grid-equal-2 img {
+    aspect-ratio: 16 / 9; /* Landscape sempurna */
+}
+
+.grid-equal-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+.grid-equal-3 img {
+    aspect-ratio: 4 / 3; /* Bentuk kotak landscape proporsional */
+}
+
+.grid-equal-4 {
+    grid-template-columns: repeat(2, 1fr); /* Dibuat 2 baris 2 kolom agar fotonya besar */
+}
+.grid-equal-4 img {
+    aspect-ratio: 16 / 9; /* Seragam dan rapi */
+}
+
+/* =========================================
+   WADAH STATISTIK MEET UP
+   ========================================= */
+.meetup-stats-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 20px;
+}
+.meetup-stat {
+    flex: 1;
+    background: var(--white);
+    border: 1px solid rgba(244, 114, 182, 0.25);
+    border-radius: 15px;
+    padding: 15px 10px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.meetup-stat h3 { font-size: 1.5rem; color: var(--pink-accent); margin-bottom: 5px; font-weight: 800; }
+.meetup-stat p { font-size: 0.75rem; color: var(--navy-light); font-weight: 600; margin: 0; }
+.meetup-stat:hover {
+    transform: translateY(-5px) scale(1.05);
+    background: var(--pink-accent);
+    border-color: var(--pink-accent);
+    box-shadow: 0 10px 25px rgba(244, 114, 182, 0.3);
+}
+.meetup-stat:hover h3, .meetup-stat:hover p { color: var(--white); }
+
+/* INDIKATOR TITIK DI BAWAH */
+.slider-indicators {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+.slider-dot {
+    width: 10px; height: 10px; background: #cbd5e1; border-radius: 50%;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); cursor: pointer;
+}
+.slider-dot.active {
+    width: 30px; background: var(--pink-accent); border-radius: 10px;
+    box-shadow: 0 0 10px rgba(244, 114, 182, 0.5);
+}
+
+/* Responsif HP */
+@media (max-width: 768px) {
+    .proker-slide-vertical { flex: 0 0 85vw; padding: 25px; }
+    .grid-equal-2, .grid-equal-3, .grid-equal-4 { grid-template-columns: 1fr 1fr; }
+    .meetup-stats-row { flex-direction: column; gap: 10px; }
+}
+/* Meet Up Khusus */
+.proker-quote-desc { border-left: 4px solid var(--pink-accent); padding-left: 15px; margin-bottom: 25px; }
+.proker-quote-desc p { font-size: 0.9rem; color: var(--navy-light); line-height: 1.7; }
+.meetup-stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.meetup-stat { background: var(--white); border: 1px solid rgba(244, 114, 182, 0.2); border-radius: 12px; padding: 15px 10px; text-align: center; transition: 0.4s; }
+.meetup-stat:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(244, 114, 182, 0.15); background: var(--pink-light); }
+.meetup-stat h3 { font-size: 1.5rem; color: var(--pink-accent); margin-bottom: 5px; }
+.meetup-stat p { font-size: 0.75rem; color: var(--navy-light); font-weight: 600; }
+
+/* Indikator Titik */
+.slider-indicators {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.slider-dot {
+    width: 10px;
+    height: 10px;
+    background: #cbd5e1;
+    border-radius: 50%;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+.slider-dot.active {
+    width: 30px;
+    background: var(--pink-accent);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(244, 114, 182, 0.5);
+}
+
+@media (max-width: 1024px) {
+    .proker-slide { flex: 0 0 85vw; flex-direction: column !important; padding: 30px; gap: 30px; }
+    .proker-gallery { height: 300px; width: 100%; }
+}
+/* =========================================
+   CONTACT SECTION: BERSIH & MENYATU DENGAN PARTIKEL
+   ========================================= */
+.contact-section {
+    padding: 130px 20px;
+    background: transparent; /* Transparan agar menyatu dengan background utama website */
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Memastikan canvas particles.js di dalam contact section ikut aktif bergerak */
+.contact-section #particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: none; /* Agar tidak mengganggu klik tombol */
+}
+
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2; /* Berada di atas partikel */
+}
+
+.contact-main-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--navy);
+    margin: 10px 0 15px 0;
+    letter-spacing: -1px;
+}
+
+.contact-subtitle {
+    font-size: 1.05rem;
+    color: var(--navy-light);
+    margin-bottom: 50px;
+}
+
+/* Wadah Tombol Mengambang (Floating Motion) */
+.floating-contact-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+    padding: 20px 0;
+}
+
+/* Motion Melayang Lembut (Tenang) */
+.floating-item {
+    animation: smoothDrift 6s ease-in-out infinite alternate;
+}
+
+.item-1 { animation-delay: 0s; }
+.item-2 { animation-delay: 1.5s; }
+.item-3 { animation-delay: 3s; }
+.item-4 { animation-delay: 4.5s; }
+
+@keyframes smoothDrift {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-8px); }
+}
+
+/* Desain Pill Kotak Kontak */
+.contact-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--white);
+    color: var(--navy);
+    padding: 15px 30px;
+    border-radius: 50px; 
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+    border: 1px solid rgba(244, 114, 182, 0.2);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.pill-icon {
+    font-size: 1.2rem;
+}
+
+.pill-arrow {
+    font-size: 0.9rem;
+    color: var(--pink-accent);
+    transition: transform 0.3s ease;
+}
+
+/* Saat Disentuh Kursor: Berhenti melayang, berubah jadi warna Navy pekat */
+.contact-pill:hover {
+    animation-play-state: paused;
+    transform: translateY(-6px) scale(1.03);
+    background: var(--navy);
+    color: var(--white);
+    border-color: var(--navy);
+    box-shadow: 0 15px 35px rgba(15, 23, 42, 0.15);
+}
+
+.contact-pill:hover .pill-arrow {
+    transform: translate(3px, -3px);
+    color: var(--white);
+}
+
+/* Responsif HP */
+@media (max-width: 768px) {
+    .contact-main-title { font-size: 2.5rem; }
+    .floating-contact-grid { flex-direction: column; gap: 15px; }
+    .contact-pill { width: 100%; justify-content: center; }
+    .floating-item { animation: none; }
+}
+/* =========================================
+   KOTAK TEKS PROKER: DINAMIS & BERUBAH WARNA SAAT DISENTUH
+   ========================================= */
+.proker-text {
+    flex: 1.2;
+    background: rgba(255, 255, 255, 0.8); /* Warna dasar awalnya putih bersih */
+    padding: 25px;
+    border-radius: 20px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid transparent;
+}
+
+/* KETIKA KURSOR MENYENTUH KOTAK TEKS */
+.proker-slide:hover .proker-text {
+    background: var(--soft-pink) !important; /* Berubah total jadi soft pink sesuai paletmu */
+    transform: translateY(-5px); /* Kotak teksnya sedikit mengangkat */
+    border-color: rgba(244, 114, 182, 0.3); /* Muncul garis tepi pink tipis */
+    box-shadow: 0 10px 25px rgba(244, 114, 182, 0.15); /* Ada efek cahaya lembut */
+}
+
+/* Opsional: Tambahan agar teks role/badge ikut merespons */
+.proker-slide:hover .proker-role {
+    background: var(--white); /* Badge role-nya jadi putih kontras saat disentuh */
+    color: var(--pink-accent);
+}
+/* =========================================
+   MY JOURNEY AS A STAFF BOX: INTERAKTIF HOVER
+   ========================================= */
+.pih-description-box {
+    background: var(--white) !important;
+    padding: 30px !important;
+    border-radius: 20px !important;
+    border-left: 5px solid var(--navy) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03) !important;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+.pih-description-box:hover {
+    background: var(--soft-pink) !important; /* Berubah total jadi soft pink yang cantik */
+    transform: translateY(-6px) !important; /* Mengangkat ringan */
+    border-left-color: var(--pink-accent) !important; /* Garis pinggir kiri jadi pink */
+    box-shadow: 0 15px 35px rgba(244, 114, 182, 0.25) !important; /* Muncul efek glow pink */
+}
+/* =========================================
+   GALLERY 3 FOTO & ZOOM LIGHTBOX (NINETY EXPO)
+   ========================================= */
+.zoom-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.zoomable-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    cursor: zoom-in; /* Kursor berubah jadi kaca pembesar */
+    border: 1px solid rgba(244, 114, 182, 0.2);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+
+.zoomable-img:hover {
+    transform: translateY(-8px) scale(1.02); /* Sedikit membesar dan naik saat disentuh */
+    box-shadow: 0 15px 30px rgba(244, 114, 182, 0.2);
+}
+
+/* Background Gelap untuk Modal Zoom */
+.image-modal {
+    display: none; /* Disembunyikan sampai foto diklik */
+    position: fixed;
+    z-index: 9999;
+    padding: 40px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 23, 42, 0.85); /* Navy transparan */
+    backdrop-filter: blur(8px); /* Efek blur estetik di belakang foto */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Gambar Besar di Tengah */
+.modal-content {
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 15px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    animation: zoomInPopup 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes zoomInPopup {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Tombol Tutup (X) */
+.close-modal {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: var(--soft-pink);
+    font-size: 45px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-modal:hover {
+    color: var(--pink-accent);
+    transform: scale(1.2);
+}
+
+/* Responsif HP: Foto jadi turun ke bawah (1 kolom) */
+@media (max-width: 768px) {
+    .zoom-gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* =========================================
+   RATOH JAROE: TOMBOL DRIVE & INFINITE MARQUEE
+   ========================================= */
+
+/* Tombol Google Drive */
+.drive-btn-container {
+    text-align: center;
+    margin: 20px 0 60px 0;
+}
+
+.btn-drive {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--white);
+    color: var(--pink-accent);
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-decoration: none;
+    border: 2px solid rgba(244, 114, 182, 0.3);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-drive:hover {
+    background: var(--pink-accent);
+    color: var(--white);
+    border-color: var(--pink-accent);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(244, 114, 182, 0.3);
+}
+
+/* Wrapper Marquee agar foto tidak tembus batas */
+.marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-bottom: 25px;
+    padding: 15px 0;
+    position: relative;
+}
+
+/* Track Animasi */
+.marquee-track {
+    display: inline-block;
+    width: max-content;
+}
+
+/* Animasi Kanan & Kiri */
+.marquee-left { animation: scrollLeft 35s linear infinite; }
+.marquee-right { animation: scrollRight 35s linear infinite; }
+
+/* PAUSE OTOMATIS SAAT DISENTUH (HOVER) */
+.marquee-wrapper:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+@keyframes scrollLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes scrollRight {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+}
+
+/* Desain Gambar di dalam Marquee */
+.marquee-img {
+    height: 240px;
+    width: auto;
+    border-radius: 15px;
+    margin-right: 25px; /* Jarak antar foto */
+    display: inline-block;
+    border: 1px solid rgba(15, 23, 42, 0.05);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+
+/* Efek Foto Membesar (Pop-out) saat disentuh di dalam Marquee */
+.marquee-img:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 15px 30px rgba(244, 114, 182, 0.25);
+    border-color: var(--pink-accent);
+    z-index: 5;
+    position: relative;
+}
+/* =========================================
+   MC PAGE: HIGHLIGHT STATS & GALLERY 5x2
+   ========================================= */
+
+/* Spotlight / Highlight Row (Dinamis) */
+.mc-highlight-row {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.mc-stat-card {
+    flex: 1;
+    min-width: 200px;
+    background: var(--white);
+    border: 2px solid rgba(244, 114, 182, 0.2);
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.mc-stat-card h3 {
+    font-size: 1.5rem;
+    color: var(--pink-accent);
+    margin-bottom: 5px;
+}
+
+.mc-stat-card p {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--navy-light);
+}
+
+/* Interaksi Hover pada Spotlight */
+.mc-stat-card:hover {
+    transform: translateY(-8px) scale(1.05);
+    background: var(--pink-accent); /* Berubah jadi pink tua */
+    border-color: var(--pink-accent);
+    box-shadow: 0 15px 30px rgba(244, 114, 182, 0.3);
+}
+
+.mc-stat-card:hover h3, 
+.mc-stat-card:hover p {
+    color: var(--white); /* Teks berubah putih agar kontras */
+}
+
+/* Galeri Grid 5 Kolom (Baris Atas & Bawah) */
+.mc-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Pasti terbagi 5 kolom sama rata */
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.mc-gallery-grid .zoomable-img {
+    width: 100%;
+    height: 250px; /* Tinggi disesuaikan agar proporsional */
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid rgba(15, 23, 42, 0.05);
+}
+
+/* Responsif HP & Tablet */
+@media (max-width: 1024px) {
+    .mc-gallery-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px) {
+    .mc-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .mc-highlight-row { flex-direction: column; }
+}
+/* =========================================
+   CERTIFICATIONS GRID & DYNAMIC HOVER
+   ========================================= */
+
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Base Card Design (Awalnya Putih) */
+.cert-card {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden; /* Agar ujung foto di atas ikut melengkung */
+    border: 1px solid rgba(244, 114, 182, 0.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Visualisasi Foto Sertifikat di Atas */
+.cert-img {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(244, 114, 182, 0.1);
+}
+
+.cert-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: transform 0.5s ease;
+}
+
+/* Konten Teks di Bawah Foto */
+.cert-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.cert-title {
+    font-size: 1.25rem;
+    color: var(--navy);
+    font-weight: 700;
+    margin-bottom: 5px;
+    line-height: 1.3;
+}
+
+.cert-meta {
+    font-size: 0.85rem;
+    color: #64748b;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.cert-desc {
+    font-size: 0.9rem;
+    color: var(--navy-light);
+    line-height: 1.6;
+    margin-bottom: 25px;
+    flex-grow: 1; /* Mendorong tombol selalu ke paling bawah */
+}
+
+/* Tombol View Certificate (Elegan Pink) */
+.btn-view-cert {
+    display: block;
+    text-align: center;
+    background: var(--pink-light);
+    color: var(--pink-accent);
+    padding: 12px 0;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+/* =========================================
+   INTERAKSI HOVER (BERUBAH WARNA DINAMIS)
+   ========================================= */
+
+/* Seluruh kotak berubah jadi Soft Pink dan mengangkat saat disentuh */
+.cert-card:hover {
+    transform: translateY(-10px);
+    background: var(--soft-pink);
+    border-color: var(--pink-accent);
+    box-shadow: 0 20px 40px rgba(244, 114, 182, 0.2);
+}
+
+/* Efek Zoom halus pada foto sertifikat saat card disentuh */
+.cert-card:hover .cert-img img {
+    transform: scale(1.05);
+}
+
+/* Tombol ikut berubah jadi mencolok saat card disentuh */
+.cert-card:hover .btn-view-cert {
+    background: var(--pink-accent);
+    color: var(--white);
+    border-color: var(--pink-accent);
+}
+
+/* Responsif untuk Tablet & Mobile */
+@media (max-width: 1024px) {
+    .cert-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .cert-grid { grid-template-columns: 1fr; }
+    .cert-img { height: 250px; }
+}
+/* =========================================
+   MODAL LIGHTBOX (ZOOM FOTO EKSKLUSIF)
+   ========================================= */
+.image-modal {
+    display: none; /* Disembunyikan sampai foto diklik */
+    position: fixed;
+    z-index: 9999;
+    padding: 40px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 23, 42, 0.85); /* Latar Navy transparan yang elegan */
+    backdrop-filter: blur(8px); /* Efek blur di belakang foto */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ukuran Foto Saat Di-zoom */
+.modal-content {
+    max-width: 85%; /* Tidak full screen, masih menyisakan ruang estetik */
+    max-height: 85vh;
+    border-radius: 15px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    /* Animasi muncul yang dinamis & kenyal */
+    animation: zoomInPopup 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes zoomInPopup {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+.proker-gallery-bottom img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: 0.4s ease;
+    cursor: zoom-in; /* Mengubah kursor jadi kaca pembesar */
+    border: 1px solid rgba(15, 23, 42, 0.05);
+    /* Tambahan agar tidak bisa di-drag paksa oleh browser (murni klik) */
+    user-drag: none;
+    -webkit-user-drag: none;
+}
+/* Tombol Silang (X) untuk Menutup */
+.close-modal {
+    position: absolute;
+    top: 25px;
+    right: 40px;
+    color: var(--soft-pink);
+    font-size: 45px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.close-modal:hover {
+    color: var(--pink-accent);
+    transform: scale(1.2);
+}
+/* =========================================
+   MODAL LIGHTBOX FULL SCREEN (GLOBAL)
+   ========================================= */
+.image-modal-fullscreen {
+    display: none; 
+    position: fixed;
+    z-index: 999999; /* Z-INDEX SANGAT TINGGI agar selalu di atas segalanya */
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(15, 23, 42, 0.95); /* Navy transparan yang sangat gelap */
+    backdrop-filter: blur(12px);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content-fs {
+    max-width: 95vw;
+    max-height: 95vh;
+    object-fit: contain; 
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    animation: zoomInFull 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes zoomInFull {
+    from { transform: scale(0.6); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.close-modal-fs {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: var(--soft-pink);
+    font-size: 55px; 
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+    z-index: 1000000; /* Selalu di atas gambar */
+}
+
+.close-modal-fs:hover {
+    color: var(--pink-accent);
+    transform: scale(1.15);
+}
+/* ========================================================
+   ULTIMATE MOBILE FIX (MAKSIMAL 600PX - HANYA UNTUK HP)
+   ======================================================== */
+@media (max-width: 600px) {
+    
+    /* GLOBAL FIX: Jangan ada elemen yang melebihi lebar layar */
+    body, html {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    /* 1. HERO SECTION (Tampilan Atas) */
+    .hero {
+        flex-direction: column-reverse; /* Foto Nisa di atas, teks di bawah */
+        text-align: center;
+        padding: 120px 20px 50px 20px;
+        gap: 40px;
+    }
+    .hero-content h1 {
+        font-size: 2.5rem; /* Ukuran font lebih wajar untuk HP */
+    }
+    .hero-image {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .id-card {
+        transform: rotate(0deg) !important; /* Hapus rotasi miring agar rapi di HP */
+        max-width: 250px;
+    }
+
+    /* 2. SECTION PADDING (Jarak kiri kanan untuk semua bagian) */
+    .about, .education, .work, .organization, .achievements, .contact {
+        padding: 60px 20px;
+    }
+
+    /* 3. EDUCATION CARDS */
+    .edu-card {
+        padding: 25px 20px;
+    }
+
+    /* 4. WORK & ORGANIZATION CARDS (Memaksa menyatu jadi 1 kolom) */
+    .timeline {
+        padding-left: 0; /* Hapus garis vertikal panjang di kiri */
+    }
+    .timeline-item {
+        flex-direction: column; /* Tata letak atas-bawah */
+        align-items: flex-start;
+        padding: 25px 20px;
+        margin-left: 0;
+        margin-bottom: 30px;
+        height: auto;
+        min-height: unset;
+        box-sizing: border-box;
+        width: 100%; /* Memaksa kotak selebar layar sisa */
+        position: relative; /* Kunci elemen di dalamnya */
+    }
+
+    /* Hilangkan nomor urut "01", "02" yang terbang di luar kotak */
+    .timeline-item::before {
+        display: none;
+    }
+
+    /* Pindahkan logo perusahaan ke atas */
+    .timeline-logo {
+        position: relative;
+        left: 0;
+        transform: none;
+        margin-bottom: 20px;
+        align-self: flex-start;
+    }
+
+    .timeline-content {
+        width: 100%;
+        padding: 0;
+    }
+
+    /* 5. KOTAK STATS KECIL ("Business Strategy", dll) */
+    .timeline-tags {
+        position: relative; /* Cabut posisi "terbang" */
+        right: auto;
+        top: auto;
+        transform: none;
+        display: flex;
+        flex-wrap: wrap; /* Izinkan turun baris */
+        gap: 10px;
+        margin-top: 20px;
+        width: 100%;
+    }
+    .tag {
+        margin: 0;
+        font-size: 0.8rem;
+    }
+
+    /* 6. TOMBOL "VIEW DETAILS" & "VIEW ALL" */
+    .timeline-action, .other-committees-box {
+        position: relative; /* Cabut posisi "terbang" */
+        right: auto;
+        bottom: auto;
+        transform: none;
+        margin-top: 25px;
+        width: 100%;
+    }
+    
+    .btn-details {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%; /* Tombol melebar penuh */
+        padding: 12px 20px;
+        box-sizing: border-box;
+    }
+
+    /* 7. ACHIEVEMENT SECTION */
+    .achievement-card {
+        flex-direction: column;
+        padding: 25px 20px;
+        height: auto;
+        gap: 20px;
+        position: relative;
+    }
+    .achievement-list {
+        padding-right: 0;
+        width: 100%;
+    }
+    .achievement-thumbnail {
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: none;
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+    .achievement-thumbnail img {
+        width: 100%;
+        max-width: 250px;
+    }
+    .achievement-action {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+/* ========================================================
+   CSS HAMBURGER (Dasar)
+   ======================================================== */
+.mobile-menu-toggle {
+    display: none; /* Sembunyikan di laptop */
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 10001;
+}
+
+.mobile-menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--navy);
+    transition: 0.3s ease;
+    border-radius: 5px;
+}
+
+/* Animasi X */
+.mobile-menu-toggle.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.mobile-menu-toggle.active span:nth-child(2) { opacity: 0; }
+.mobile-menu-toggle.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+/* ========================================================
+   TOMBOL KEMBALI KE ATAS (BULAT SEMPURNA)
+   ======================================================== */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    font-size: 24px;
+    border: none;
+    outline: none;
+    background-color: var(--navy); /* Warna dasar Navy */
+    color: white;
+    cursor: pointer;
+    width: 50px;       /* Lebar dan tinggi sama = bulat sempurna */
+    height: 50px;
+    line-height: 50px; /* Bikin tanda panah persis di tengah */
+    text-align: center;
+    border-radius: 50%; /* Bikin bulat */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    padding: 0;
+    /* Defaultnya disembunyikan oleh JavaScript saat di paling atas */
+}
+
+/* Dinamis: Berubah Soft Pink saat disentuh */
+.back-to-top:hover {
+    background-color: var(--pink-accent);
+    transform: scale(1.1); 
+}
+
+/* KUNCI: Sembunyikan tombol ini SEPENUHNYA jika dibuka di Laptop/iPad (> 600px) */
+@media (min-width: 601px) {
+    .back-to-top {
+        display: none !important;
+    }
+}
+
+/* ========================================================
+   MOBILE FIX DEFINITIF (MAKSIMAL 600PX) - KHUSUS HP
+   HANYA memperbaiki posisi View Details di layar HP.
+   Tampilan desktop/laptop tidak disentuh.
+   ======================================================== */
+@media (max-width: 600px) {
+
+    /* Mencegah halaman bergeser ke samping */
+    html,
+    body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* Pastikan card tetap mengikuti lebar layar HP */
+    .horizontal-card,
+    .speaking-featured,
+    .timeline-item {
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* View Details pada horizontal card: pindah menjadi baris sendiri di bawah konten */
+    .h-action-container {
+        position: static !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        flex-shrink: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        gap: 10px !important;
+        margin-top: 15px !important;
+        padding: 0 !important;
+        background: transparent !important;
+        box-sizing: border-box !important;
+        transform: none !important;
+    }
+
+    .h-action-btn {
+        position: static !important;
+        flex-shrink: 0 !important;
+        width: 35px !important;
+        height: 35px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: var(--pink-accent) !important;
+        color: var(--white) !important;
+        border-radius: 50% !important;
+        transform: none !important;
+    }
+
+    .view-text {
+        display: block !important;
+        color: var(--pink-accent) !important;
+        white-space: nowrap !important;
+        font-weight: 600 !important;
+    }
+
+    /* View Details untuk Work Experience */
+    .timeline-action {
+        position: static !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        margin-top: 15px !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+        transform: none !important;
+        display: flex !important;
+        justify-content: flex-end !important;
+        align-items: center !important;
+    }
+
+    .timeline-action a {
+        width: auto !important;
+        max-width: 100% !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        white-space: nowrap !important;
+        margin: 0 !important;
+    }
+
+    /* Other Committees tetap compact */
+    .other-committees-box {
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+    }
+}
+/* ========================================================
+   KODE KHUSUS TAMPILAN HP (MAKSIMAL 600PX)
+   Tampilan Laptop/Desktop 100% Aman & Tidak Berubah
+   ======================================================== */
+@media (max-width: 600px) {
+    /* 1. Kunci layar agar tidak bisa digeser ke samping */
+    body, html { 
+        overflow-x: hidden !important; 
+        width: 100% !important; 
+    }
+
+    /* 2. Aktifkan Hamburger Menu di HP */
+    .mobile-menu-toggle { 
+        display: flex !important; 
+        flex-direction: column !important; 
+        gap: 5px !important; 
+        cursor: pointer !important; 
+        z-index: 10001 !important; 
+    }
+    .mobile-menu-toggle span { 
+        width: 25px !important; 
+        height: 3px !important; 
+        background-color: var(--navy) !important; 
+        transition: 0.3s ease !important; 
+        border-radius: 5px !important; 
+    }
+    .mobile-menu-toggle.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .mobile-menu-toggle.active span:nth-child(2) { opacity: 0; }
+    .mobile-menu-toggle.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    /* Sembunyikan menu horizontal biasa di HP, ubah jadi dropdown */
+    .nav-links {
+        position: fixed !important; 
+        top: 70px !important; 
+        right: -100% !important; 
+        width: 100% !important;
+        height: calc(100vh - 70px) !important; 
+        background-color: var(--white) !important;
+        flex-direction: column !important; 
+        align-items: center !important; 
+        justify-content: flex-start !important;
+        padding-top: 30px !important; 
+        transition: right 0.4s ease !important; 
+        z-index: 9998 !important; 
+        display: flex !important;
+    }
+    .nav-links.active { right: 0 !important; }
+    .nav-links a {
+        display: block !important; 
+        width: 80% !important; 
+        text-align: center !important; 
+        padding: 15px 0 !important;
+        border-bottom: 1px solid rgba(244, 114, 182, 0.2) !important; 
+        font-size: 1.2rem !important;
+    }
+
+    /* 3. Perbaikan Halaman Detail MC di HP (Agar Kotak Navy Tidak Kepotong) */
+    .detail-section { 
+        padding: 90px 15px 40px 15px !important; 
+        box-sizing: border-box !important; 
+        width: 100% !important;
+    }
+    .detail-banner { 
+        padding: 30px 20px !important; 
+        box-sizing: border-box !important; 
+        border-radius: 20px !important; 
+        width: 100% !important;
+    }
+    .banner-title { 
+        font-size: 1.8rem !important; 
+        line-height: 1.3 !important; 
+        word-wrap: break-word !important; 
+    }
+    .mc-highlight-row { 
+        flex-direction: column !important; 
+        gap: 12px !important; 
+        width: 100% !important; 
+    }
+    .mc-stat-card { 
+        width: 100% !important; 
+    }
+
+    /* 4. Merapikan Timeline / Kotak Pengalaman di HP */
+    .horizontal-card, .speaking-featured {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        padding: 20px !important;
+        gap: 15px !important;
+    }
+    .h-action-container {
+        width: 100% !important;
+        justify-content: space-between !important;
+    }
+    /* ========================================================
+       KOTAK VIEW DETAILS BERWARNA NAVY PENUH (KHUSUS HP)
+       ======================================================== */
+    .h-action-container {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        background-color: var(--navy) !important; /* Warna dasar Navy */
+        padding: 15px 20px !important;
+        border-radius: 12px !important;
+        box-sizing: border-box !important;
+        margin-top: 20px !important;
+        width: 100% !important;
+        transition: all 0.3s ease !important;
+    }
+
+    /* Teks dan Tombol Panah di dalam kotak Navy berubah jadi putih */
+    .h-action-container .view-text {
+        color: var(--white) !important;
+        font-weight: 600 !important;
+    }
+
+    .h-action-container .h-action-btn {
+        background: transparent !important;
+        color: var(--white) !important;
+        width: auto !important;
+        height: auto !important;
+        border-radius: 0 !important;
+    }
+
+    /* Efek Dinamis: Kotak berubah jadi Soft Pink saat disentuh di HP */
+    .horizontal-card:hover .h-action-container, 
+    .speaking-featured:hover .h-action-container {
+        background-color: var(--pink-accent) !important;
+        box-shadow: 0 5px 15px rgba(244, 114, 182, 0.4) !important;
+    }
+    /* ========================================================
+       PERBAIKAN NAVBAR HALAMAN DETAIL (KHUSUS HP)
+       Biar tombol tidak gencet-gencetan dan bentuknya membulat aneh
+       ======================================================== */
+    .detail-nav {
+        flex-direction: column !important; /* Susun atas-bawah dengan breadcrumb */
+        align-items: flex-start !important;
+        padding: 15px 20px !important;
+        gap: 15px !important;
+        height: auto !important;
+    }
+    
+    .detail-nav .nav-actions {
+        width: 100% !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        gap: 10px !important; /* Jarak rapi antar 2 tombol */
+    }
+    
+    .detail-nav .nav-actions a, 
+    .detail-nav .nav-actions .btn-back, 
+    .detail-nav .nav-actions .nav-contact-btn {
+        flex: 1 !important; /* Membagi dua tombol sama rata */
+        text-align: center !important;
+        padding: 10px 5px !important;
+        font-size: 0.8rem !important; /* Sedikit dikecilkan agar pas di HP */
+        white-space: nowrap !important; /* KUNCI: Memaksa teks jadi 1 baris, tidak boleh turun ke bawah */
+        margin: 0 !important;
+        border-radius: 30px !important;
+    }
+    /* ========================================================
+       PERBAIKAN MUTLAK HALAMAN DETAIL MC (KHUSUS HP)
+       Menimpa inline-style HTML agar tidak melebar/berantakan
+       ======================================================== */
+
+    /* 1. Mencegah layar geser kanan-kiri */
+    body.detail-page-body { overflow-x: hidden !important; width: 100% !important; max-width: 100vw !important; }
+
+    /* 2. Merapikan Navbar Detail (Breadcrumb di atas, 2 tombol sejajar di bawah) */
+    .detail-nav {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        padding: 15px 20px !important;
+        height: auto !important;
+        gap: 15px !important;
+    }
+    .detail-nav .nav-actions {
+        width: 100% !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        gap: 10px !important;
+    }
+    .detail-nav .nav-actions a {
+        flex: 1 !important;
+        text-align: center !important;
+        padding: 10px 5px !important;
+        font-size: 0.8rem !important;
+        white-space: nowrap !important;
+        margin: 0 !important;
+    }
+
+    /* 3. Menaklukkan inline-style pembungkus agar pas layar HP */
+    .detail-section {
+        padding: 90px 10px 40px 10px !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+        box-sizing: border-box !important;
+        overflow-x: hidden !important;
+    }
+    .detail-section > div {
+        padding: 0 !important; /* Menimpa padding 5% di HTML */
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 4. Melangsingkan Kotak Navy dan Mengecilkan Judul */
+    .detail-banner {
+        padding: 30px 15px !important;
+        margin-bottom: 20px !important;
+        border-radius: 15px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    .banner-title {
+        font-size: 1.8rem !important;
+        line-height: 1.3 !important;
+    }
+    .banner-company {
+        font-size: 0.9rem !important;
+    }
+
+    /* 5. Merapikan Kotak Putih Deskripsi & Mengubah Kotak Stats Jadi Atas-Bawah */
+    .pih-description-box {
+        padding: 20px 15px !important;
+        margin-bottom: 30px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        border-radius: 15px !important;
+    }
+    .mc-highlight-row {
+        flex-direction: column !important; /* Paksa kotak 5+ events jadi atas-bawah */
+        gap: 15px !important;
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    .mc-stat-card {
+        width: 100% !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 6. Menyesuaikan Galeri Foto Bergerak agar Tidak Membengkak di HP */
+    .marquee-wrapper {
+        width: 100% !important;
+        max-width: 100vw !important;
+        box-sizing: border-box !important;
+    }
+    .marquee-img {
+        height: 150px !important; /* Tinggi foto dikecilkan agar proporsional di HP */
+        margin-right: 10px !important;
+    }
+}

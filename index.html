@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khairunnisa Najla - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body>
+
+<!-- SPLASH SCREEN / OPENING LOADING -->
+    <div id="splash-screen">
+        <div class="splash-content">
+            <h1 class="splash-title">Welcome to My<br><span class="highlight-pink">Portfolio Website</span></h1>
+            <div class="loading-container">
+                <span class="loading-text">Loading</span>
+                <span id="loading-percentage">0%</span>
+            </div>
+            <div class="loading-bar-bg">
+                <div class="loading-bar-fill" id="loading-bar"></div>
+            </div>
+        </div>
+    </div>
+    <div id="particles-js"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="logo">Nisa.</div>
+        <ul class="nav-links">
+            <li><a href="#home" class="nav-item active">Home</a></li>
+            <li><a href="#about" class="nav-item">About</a></li>
+            <li><a href="#education" class="nav-item">Education</a></li>
+            <li><a href="#work" class="nav-item">Experience</a></li>
+            <li><a href="#organization" class="nav-item">Organization</a></li>
+            <li><a href="#certifications" class="nav-item">Certs</a></li>
+            <li><a href="#achievements" class="nav-item">Achievements</a></li>
+            <li><a href="#contact" class="nav-contact-btn">Contact</a></li>
+        </ul>
+    </nav>
+   <!-- =========================================
+         NAVBAR BARU (BERSIH & RESPONSIF)
+         ========================================= -->
+    <nav class="main-nav">
+        <!-- Logo -->
+        <a href="index.html" class="logo">Nisa.</a>
+
+        <!-- Ikon Hamburger (Hanya muncul di HP) -->
+        <div class="mobile-menu-toggle" id="mobileMenuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Tautan Menu -->
+        <div class="nav-links" id="navLinks">
+            <a href="index.html#about">About</a>
+            <a href="index.html#education">Education</a>
+            <a href="index.html#work">Experience</a>
+            <a href="index.html#organization">Organization</a>
+            <a href="index.html#certifications">Certs</a>
+            <a href="index.html#achievements">Achievements</a>
+            <a href="index.html#contact" class="nav-contact-btn">Contact Me</a>
+        </div>
+    </nav>
+
+    <!-- Home & About (Tetap Sama) -->
+    <section id="home" class="hero section-hidden">
+        <div class="hero-text">
+            <p class="greeting">Welcome to my space!</p>
+            <!-- Teks dikosongkan dan diganti dengan tag penampung efek ngetik -->
+            <h1>Hi, I'm <br>
+                <span class="highlight">
+                    <span id="typewriter-text"></span><span class="cursor">|</span>
+                </span>
+            </h1>
+            <p class="role-desc">Information Systems & Accounting Student | Finance & Data Enthusiast</p>
+            <a href="#about" class="btn">Discover More About Me</a>
+        </div>
+        <div class="nametag-container">
+            <div class="lanyard"></div>
+            <div class="nametag">
+                <div class="nametag-hole"></div>
+                <div class="nametag-photo">
+                    <img src="foto-nisa.jpeg" alt="Foto Nisa" onerror="this.src='https://via.placeholder.com/250x350/0f172a/ffffff?text=Taruh+Fotomu+Disini'">
+                </div>
+                <div class="nametag-footer">Nisa's ID Card</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section-hidden">
+        <h2 class="section-title">About My Journey</h2>
+        <div class="about-content">
+            <div class="summary-box">
+                <p class="summary">
+                    I am an active Information Systems student at UIN Jakarta and Accounting Student at BINUS Online University with a strong passion for public relations, data processing, finance, and social media management. I combine analytical mindsets with compelling digital communication to drive impactful campaigns and manage systems efficiently.
+                </p>
+            </div>
+            <div class="skills-container">
+                <div class="skill-box">
+                    <h3>Technical Skills</h3>
+                    <ul>
+                        <li>Financial & Business Analysis</li>
+                        <li>System & Process Modeling</li>
+                        <li>Public Relations & Campaign Management</li>
+                        <li>Data Analytics & Tools</li>
+                       <li>Video Editing & Post-Production</li> 
+                    </ul>
+                </div>
+                <div class="skill-box">
+                    <h3>Soft Skills</h3>
+                    <ul>
+                        <li>Strategic & Digital Communication</li>
+                        <li>Event Planning & Public Speaking</li>
+                        <li>Cross-functional Team Collaboration</li>
+                        <li>Problem Solving & Adaptability</li>
+                        <li>Active Listening & Negotiation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tambahkan kode ini tepat di bawah <div class="skills-container">...</div> -->
+            
+            <div class="tools-section">
+                <h3 class="tools-title">Tools & Technologies I Frequently Use</h3>
+                <div class="tools-marquee">
+                    <!-- Efek gradasi bayangan putih di kiri dan kanan -->
+                    <div class="marquee-fade-left"></div>
+                    <div class="marquee-fade-right"></div>
+                    
+                    <div class="tools-track">
+                        <!-- SET 1 -->
+                        <div class="tool-item"><img src="foto-excel.png" alt="Excel" onerror="this.src='https://via.placeholder.com/40/fce7f3/f472b6?text=Ex'"><br><span>Excel</span></div>
+                        <div class="tool-item"><img src="foto-word.png" alt="Word" onerror="this.src='https://via.placeholder.com/40/fce7f3/f472b6?text=W'"><br><span>Word</span></div>
+                        <div class="tool-item"><img src="foto-tableau.png" alt="Tableau" onerror="this.src='https://via.placeholder.com/40/fce7f3/f472b6?text=Tb'"><br><span>Tableau</span></div>
+                        <div class="tool-item"><img src="foto-mysql.png" alt="MySQL" onerror="this.src='https://via.placeholder.com/40/fce7f3/f472b6?text=SQL'"><br><span>MySQL</span></div>
+                        <div class="tool-item"><img src="foto-sheets.png" alt="Sheets" onerror="this.src='https://via.placeholder.com/40/fce7f3/f472b6?text=Sh'"><br><span>Sheets</span></div>
+                        <div class="tool-item"><img src="foto-canva.png" alt="Canva" onerror="this.src='https://via.placeholder.com/40/fce7f3/f472b6?text=Cv'"><br><span>Canva</span></div>
+                        <div class="tool-item"><img src="foto-capcut.png" alt="CapCut" onerror="this.src='https://via.placeholder.com/40/fce7f3/f472b6?text=Cc'"><br><span>CapCut</span></div>
+                        <div class="tool-item"><img src="foto-am.jfif" alt="Alight Motion" onerror="this.src='https://via.placeholder.com/40/fce7f3/f472b6?text=AM'"><br><span>Alight Motion</span></div>
+                        
+                        <!-- SET 2 (Duplikasi untuk efek infinite scroll tanpa putus) -->
+                        <div class="tool-item"><img src="foto-excel.png" alt="Excel" onerror="this.src='https://via.placeholder.com/40/fce7f3/f472b6?text=Ex'"><br><span>Excel</span></div>
+                        <div class="tool-item"><img src="foto-word.png" alt="Word" onerror="this.src='https://via.placeholder.com/40/fce7f3/f472b6?text=W'"><br><span>Word</span></div>
+                        <div class="tool-item"><img src="foto-tableau.png" alt="Tableau" onerror="this.src='https://via.placeholder.com/40/fce7f3/f472b6?text=Tb'"><br><span>Tableau</span></div>
+                        <div class="tool-item"><img src="foto-mysql.png" alt="MySQL" onerror="this.src='https://via.placeholder.com/40/fce7f3/f472b6?text=SQL'"><br><span>MySQL</span></div>
+                        <div class="tool-item"><img src="foto-sheets.png" alt="Sheets" onerror="this.src='https://via.placeholder.com/40/fce7f3/f472b6?text=Sh'"><br><span>Sheets</span></div>
+                        <div class="tool-item"><img src="foto-canva.png" alt="Canva" onerror="this.src='https://via.placeholder.com/40/fce7f3/f472b6?text=Cv'"><br><span>Canva</span></div>
+                        <div class="tool-item"><img src="foto-capcut.png" alt="CapCut" onerror="this.src='https://via.placeholder.com/40/fce7f3/f472b6?text=Cc'"><br><span>CapCut</span></div>
+                        <div class="tool-item"><img src="foto-am.jfif" alt="Alight Motion" onerror="this.src='https://via.placeholder.com/40/fce7f3/f472b6?text=AM'"><br><span>Alight Motion</span></div>
+                    </div>
+                </div>
+            </div>
+
+    <section id="education" class="section-hidden" style="padding-top: 0;">
+        <h2 class="section-title">Education Background</h2>
+        <div class="card-grid">
+            <div class="edu-card">
+                <div class="edu-header">
+                    <div>
+                        <h3>Undergraduate Information Systems Student</h3>
+                        <span class="edu-year">Aug 2024 - Present</span>
+                    </div>
+                    <img class="edu-logo" src="foto-uin-logo.png" onerror="this.src='https://via.placeholder.com/60/fdf2f8/f472b6?text=UIN'">
+                </div>
+                <p class="edu-univ">UIN Syarif Hidayatullah Jakarta</p>
+                <p class="edu-desc">Focusing on business process management, enterprise systems, and data analysis methodologies.</p>
+            </div>
+            <div class="edu-card">
+                <div class="edu-header">
+                    <div>
+                        <h3>Undergraduate Accounting Student</h3>
+                        <span class="edu-year">May 2025 - Present</span>
+                    </div>
+                    <img class="edu-logo" src="foto-logo-binus.png" onerror="this.src='https://via.placeholder.com/60/fdf2f8/f472b6?text=K2'">
+                </div>
+                <p class="edu-univ">Binus Online University</p>
+                <p class="edu-desc">Active student focusing on financial accounting principles, auditing fundamentals, and corporate finance to build a strong foundation in business administration.</p>
+            </div>
+        </div>
+    </section>
+
+ <!-- WORK EXPERIENCES -->
+    <section id="work" class="section-hidden">
+        <p class="pre-title">PROFESSIONAL JOURNEY</p>
+        <h2 class="section-title" style="margin-bottom: 10px;">Work Experiences</h2>
+        <p class="section-subtitle">A timeline of opportunities that helped me grow, learn, and make an impact beyond the classroom.</p>
+
+        <div class="timeline-container mt-4">
+            
+            <!-- Work 1: Ambivers -->
+            <div class="timeline-row">
+                <div class="timeline-num">01</div>
+                <!-- Seluruh kotak sekarang adalah link (tag <a>) -->
+                <a href="detail-ambivers.html" class="horizontal-card">
+                    <div class="h-logo">
+                        <img src="foto-logo-ambivers.png" onerror="this.src='https://via.placeholder.com/60/fdf2f8/f472b6?text=A'">
+                    </div>
+                    <div class="h-content">
+                        <span class="h-date">Jun 2026 - Present</span>
+                        <h4>Business Development Intern</h4>
+                        <p class="h-company">PT. Ambivers Indonesia</p>
+                        <p class="h-desc">Led MaeClass Dental project, served as Grab Area Supervisor, and conducted comprehensive business analysis.</p>
+                    </div>
+                    <div class="h-tags">
+                        <span>Business Strategy</span>
+                        <span>Market Research</span>
+                    </div>
+                    <div class="h-action-container">
+                        <span class="view-text">View Details</span>
+                        <!-- Tombol panah diubah jadi span agar tidak bentrok -->
+                        <span class="h-action-btn">➔</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Work 2: CGI -->
+            <div class="timeline-row">
+                <div class="timeline-num">02</div>
+                <a href="detail-cgi.html" class="horizontal-card">
+                    <div class="h-logo">
+                        <img src="foto-logo-cgi.jfif" onerror="this.src='https://via.placeholder.com/60/fdf2f8/f472b6?text=C'">
+                    </div>
+                    <div class="h-content">
+                        <span class="h-date">Jun 2026 - Sep 2026</span>
+                        <h4>Finance Intern</h4>
+                        <p class="h-company">CGI Creative Lab</p>
+                        <p class="h-desc">Managed cash flow operations, recorded financial transactions, and generated systematic invoices to ensure budgeting accuracy.</p>
+                    </div>
+                    <div class="h-tags">
+                        <span>Financial Analysis</span>
+                        <span>Budgeting</span>
+                    </div>
+                    <div class="h-action-container">
+                        <span class="view-text">View Details</span>
+                        <span class="h-action-btn">➔</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Work 3: UIN PR -->
+            <div class="timeline-row">
+                <div class="timeline-num">03</div>
+                <a href="detail-uin-pr.html" class="horizontal-card">
+                    <div class="h-logo">
+                        <img src="foto-uin-logo.png" onerror="this.src='https://via.placeholder.com/60/fdf2f8/f472b6?text=U'">
+                    </div>
+                    <div class="h-content">
+                        <span class="h-date">Dec 2025 - Mar 2026</span>
+                        <h4>Public Relations Intern</h4>
+                        <p class="h-company">Pusat Informasi & Humas UIN Jakarta</p>
+                        <p class="h-desc">Managed official TikTok & WhatsApp accounts, drove digital campaigns, and served as the Master of Ceremonies (MC).</p>
+                    </div>
+                    <div class="h-tags">
+                        <span>Digital Comm</span>
+                        <span>Content Creation</span>
+                    </div>
+                    <div class="h-action-container">
+                        <span class="view-text">View Details</span>
+                        <span class="h-action-btn">➔</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+   <!-- ORGANIZATIONAL EXPERIENCES -->
+    <section id="organization" class="section-hidden">
+        <p class="pre-title">MY JOURNEY</p>
+        <h2 class="section-title" style="margin-bottom: 10px;">Organizational Experiences</h2>
+        <p class="section-subtitle">More than just roles, these are the communities that shaped my growth, values, and passion to create impact.</p>
+
+        <div class="org-container mt-4">
+            
+            <!-- 1. HIMSI (Kotak sekarang berfungsi sebagai link) -->
+            <a href="detail-himsi.html" class="horizontal-card highlight-card">
+                <div class="h-logo highlight-logo">
+                    <img src="foto-logo-himsi.png" onerror="this.src='https://via.placeholder.com/90/fdf2f8/f472b6?text=H'">
+                </div>
+                <div class="h-content">
+                    <span class="h-date">Aug 2026 - Present</span>
+                    <h4>Head of Student Welfare Division</h4>
+                    <p class="h-company">Himpunan Mahasiswa Sistem Informasi UIN Jakarta</p>
+                    <p class="h-desc">Directed and supervised a team in executing advocacy initiatives and student welfare programs (ADKESMA).</p>
+                </div>
+                <div class="h-stats">
+                    <div class="stat-item"><strong>5</strong><br>Members Supervised</div>
+                    <div class="stat-item"><strong>5</strong><br>Programs Initiated</div>
+                </div>
+                <div class="h-action-container">
+                    <span class="view-text">View Details</span>
+                    <span class="h-action-btn">➔</span>
+                </div>
+            </a>
+
+            <!-- 2. BeriSI + Other Committees -->
+            <a href="detail-berisi.html" class="horizontal-card">
+                <div class="h-logo" style="align-self: flex-start;">
+                    <img src="foto-logo-himsi.png" onerror="this.src='https://via.placeholder.com/60/fdf2f8/f472b6?text=B'">
+                </div>
+                <div class="h-content">
+                    <span class="h-date">Aug 2025 - Apr 2026</span>
+                    <h4>Project Officer</h4>
+                    <p class="h-company">BeriSI (Berita Sistem Informasi)</p>
+                    <p class="h-desc">Developed timelines, workflows, and task distribution plans for team members, and supervised the publication process.</p>
+                    
+                    <!-- Nested: Other Committees (Menggunakan onclick agar link di dalam link tetap berfungsi) -->
+                    <div class="other-committees-box" onclick="window.location.href='detail-other-committees.html'; event.preventDefault();">
+                        <div class="oc-icon-box">👥</div>
+                        <div class="oc-text">
+                            <strong>Other Committees</strong>
+                            <span>Various committees and events I've been part of throughout my university journey.</span>
+                        </div>
+                        <span class="oc-btn">View All➔</span>
+                    </div>
+                </div>
+                
+                <div class="h-middle-stats">
+                    <div class="stat-box-pink">
+                        <strong>10+</strong>
+                        <span>Contents<br>Published</span>
+                    </div>
+                    <div class="stat-box-pink">
+                        <strong>20+</strong>
+                        <span>Team<br>Members</span>
+                    </div>
+                </div>
+
+                <div class="h-action-container">
+                    <span class="view-text">View Details</span>
+                    <span class="h-action-btn">➔</span>
+                </div>
+            </a>
+
+            <!-- 3. Ninety Campus Expo -->
+            <a href="detail-ninety-expo.html" class="horizontal-card">
+                <div class="h-logo">
+                    <img src="foto-logo-nce.jpeg" onerror="this.src='https://via.placeholder.com/60/fdf2f8/f472b6?text=N'">
+                </div>
+                <div class="h-content">
+                    <span class="h-date">Dec 2024 - Jan 2025</span>
+                    <h4>Head of Public Relations</h4>
+                    <p class="h-company">Ninety Campus Expo</p>
+                    <p class="h-desc">Led the public relations division in building strategic partnerships, managing external communications, and increasing event exposure.</p>
+                </div>
+                <div class="h-action-container">
+                    <span class="view-text">View Details</span>
+                    <span class="h-action-btn">➔</span>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+   <!-- SECTION: CERTIFICATIONS -->
+    <section id="certifications" class="cert-section" style="padding: 100px 5%; max-width: 1200px; margin: 0 auto;">
+        
+        <div style="text-align: center; margin-bottom: 50px;">
+            <p style="color: var(--pink-accent); font-weight: 700; letter-spacing: 2px;">CREDENTIALS</p>
+            <h2 style="font-size: 3rem; color: var(--navy); font-weight: 800;">Certifications</h2>
+        </div>
+
+        <div class="cert-grid">
+            
+            <!-- Card 1: Data Analytics -->
+            <div class="cert-card">
+                <div class="cert-img">
+                    <!-- Ganti src dengan foto sertifikat aslimu -->
+                    <img src="foto-sertif-cisco.jpeg" onerror="this.src='https://via.placeholder.com/400x250/fce7f3/f472b6?text=Certificate+Preview'" alt="Data Analytics Essentials">
+                </div>
+                <div class="cert-content">
+                    <h3 class="cert-title">Data Analytics Essentials</h3>
+                    <p class="cert-meta">Cisco Networking Academy • Mar - Jun 2026</p>
+                    <p class="cert-desc">Acquired foundational knowledge in data analysis methodologies, data transformation, and data visualization techniques to drive data-informed decision-making.</p>
+                    <!-- Ganti href dengan link file PDF sertifikatmu -->
+                    <a href="sertif-cisco.pdf" target="_blank" class="btn-view-cert">📄 View Certificate</a>
+                </div>
+            </div>
+
+            <!-- Card 2: AIESEC -->
+            <div class="cert-card">
+                <div class="cert-img">
+                    <img src="foto-sertif-aiesec.png" onerror="this.src='https://via.placeholder.com/400x250/fce7f3/f472b6?text=Certificate+Preview'" alt="AIESEC Future Leader">
+                </div>
+                <div class="cert-content">
+                    <h3 class="cert-title">AIESEC Future Leader</h3>
+                    <p class="cert-meta">AIESEC in UIN Jakarta • Apr - Jul 2025</p>
+                    <p class="cert-desc">Developed strong leadership and project management skills through practical training, focusing on effective communication, team collaboration, and strategic problem-solving.</p>
+                    <a href="sertif-aiesec.pdf" target="_blank" class="btn-view-cert">📄 View Certificate</a>
+                </div>
+            </div>
+
+            <!-- Card 3: UX Research -->
+            <div class="cert-card">
+                <div class="cert-img">
+                    <img src="Screenshot 2026-09-18 224547.png" onerror="this.src='https://via.placeholder.com/400x250/fce7f3/f472b6?text=Certificate+Preview'" alt="UX Research Fundamentals">
+                </div>
+                <div class="cert-content">
+                    <h3 class="cert-title">UX Research Fundamentals Bootcamp</h3>
+                    <p class="cert-meta">MySkill • Feb 2025</p>
+                    <p class="cert-desc">Mastered core UX research methodologies, specifically utilizing the System Usability Scale (SUS) method to effectively evaluate and optimize digital user experiences.</p>
+                    <a href="Khairunnisa Najla Nugrahaini - E-Certif SC UX Research Fundamentals MySkill (1).pdf" target="_blank" class="btn-view-cert">📄 View Certificate</a>
+                </div>
+            </div>
+
+            <!-- Card 4: Financial Audit -->
+            <div class="cert-card">
+                <div class="cert-img">
+                    <img src="foto-sertif-ux.png" onerror="this.src='https://via.placeholder.com/400x250/fce7f3/f472b6?text=Certificate+Preview'" alt="Financial Audit Fundamentals">
+                </div>
+                <div class="cert-content">
+                    <h3 class="cert-title">Financial Audit Fundamentals</h3>
+                    <p class="cert-meta">MySkill • Feb 2025</p>
+                    <p class="cert-desc">Gained a practical understanding of financial auditing procedures, risk assessment, and standard accounting controls to ensure corporate financial integrity.</p>
+                    <a href="Khairunnisa Najla Nugrahaini - E-Certif SC Financial Audit Fundamentals MySkill (1).pdf" target="_blank" class="btn-view-cert">📄 View Certificate</a>
+                </div>
+            </div>
+
+            <!-- Card 5: Training Camp -->
+            <div class="cert-card">
+                <div class="cert-img">
+                    <img src="foto-sertif-tc.jpeg" onerror="this.src='https://via.placeholder.com/400x250/fce7f3/f472b6?text=Certificate+Preview'" alt="Training Camp 2024">
+                </div>
+                <div class="cert-content">
+                    <h3 class="cert-title">Training Camp 2024</h3>
+                    <p class="cert-meta">HIMSI • Dec 2024</p>
+                    <p class="cert-desc">Focused on enterprise frameworks, workflow modeling, and optimization using BPMN standards to streamline organizational efficiency.</p>
+                    <a href="foto-sertif-tc.jpeg" target="_blank" class="btn-view-cert">📄 View Certificate</a>
+                </div>
+            </div>
+
+            <!-- Card 6: HITLAB -->
+            <div class="cert-card">
+                <div class="cert-img">
+                    <img src="foto-sertif-hitlab.png" onerror="this.src='https://via.placeholder.com/400x250/fce7f3/f472b6?text=Certificate+Preview'" alt="HITLAB Data Analyst">
+                </div>
+                <div class="cert-content">
+                    <h3 class="cert-title">HITLAB: Data Analyst Bootcamp</h3>
+                    <p class="cert-meta">HIMSI • Oct 2024</p>
+                    <p class="cert-desc">Explored core enterprise systems integration, covering supply chain management modules, CRM models, and resource allocation workflows.</p>
+                    <a href="sertif hitlab.pdf" target="_blank" class="btn-view-cert">📄 View Certificate</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ACHIEVEMENTS (Ratoh Jaroe Update) -->
+    <section id="achievements" class="section-hidden" style="padding-top: 0;">
+        <h2 class="section-title">Achievements</h2>
+        
+        <div class="ach-dashboard">
+            <div class="ach-left">
+                <h3 class="ach-title">Ratoh Jaroe Dance Team</h3>
+                <ul class="ach-list">
+                    <li>
+                        <span class="ach-medal">🏆</span>
+                        <div class="ach-text"><strong>1st Place</strong> – National Ratoh Jaroe Dance Festival, Governor of Aceh <span>(Nov 2023)</span></div>
+                    </li>
+                    <li>
+                        <span class="ach-medal">🥉</span>
+                        <div class="ach-text"><strong>3rd Place</strong> – Provincial Ratoh Jaroe Competition, SMAN 29 Jakarta <span>(Aug 2023)</span></div>
+                    </li>
+                    <li>
+                        <span class="ach-medal">🥇</span>
+                        <div class="ach-text"><strong>1st Place</strong> – Provincial Ratoh Jaroe Competition, SMA Muhammadiyah 3 <span>(Mar 2023)</span></div>
+                    </li>
+                    <li>
+                        <span class="ach-medal">🥉</span>
+                        <div class="ach-text"><strong>3rd Place</strong> – National Ratoh Jaroe Dance Competition, Alseace Al-Azhar <span>(Feb 2023)</span></div>
+                    </li>
+                    <li>
+                        <span class="ach-medal">🥇</span>
+                        <div class="ach-text"><strong>1st Place</strong> – Provincial Ratoh Jaroe Competition, SMAN 3 Tangerang <span>(Jan 2023)</span></div>
+                    </li>
+                    <li>
+                        <span class="ach-medal">🎖️</span>
+                        <div class="ach-text"><strong>2nd Runner-Up</strong> – National Ratoh Jaroe Festival, Ministry of Education, Culture, Research, and Technology <span>(Nov 2022)</span></div>
+                    </li>
+                </ul>
+                <a href="detail-achievements.html" class="ach-link-bottom">📁 View All Certificates & Documentation Details ➔</a>
+            </div>
+            
+            <div class="ach-right">
+                <div class="ach-image-box">
+                    <img src="foto-rj.png" alt="Ratoh Jaroe Highlight" onerror="this.src='https://via.placeholder.com/400x300/e2e8f0/94a3b8?text=Documentation+Highlight'">
+                    <p class="ach-caption">Championship & Competition Highlights</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPEAKING ENGAGEMENT -->
+    <section id="speaking" class="section-hidden">
+        <h2 class="section-title">Speaking Engagement & Presentation</h2>
+        
+        <!-- MC (Featured Card Lebar) -->
+        <a href="detail-mc.html" class="speaking-featured">
+            <div class="h-logo" style="background: var(--pink-accent); color: white; font-size: 2rem;">🎤</div>
+            <div class="h-content">
+                <span class="h-date">Multiple Events</span>
+                <h4>Master of Ceremonies (MC)</h4>
+                <p class="h-desc">Hosted various formal and informal campus events, ensuring smooth rundown execution and engaging the audience effectively.</p>
+            </div>
+            <div class="h-action-container">
+                <span class="view-text">View Details</span>
+                <span class="h-action-btn">➔</span>
+            </div>
+        </a>
+
+        <!-- 2 Pemateri Sebelahan -->
+        <div class="speaking-grid">
+            <div class="speak-card">
+                <div class="speak-icon">💡</div>
+                <h4>Pemateri Skill Center 2026</h4>
+                <p>Delivered a comprehensive presentation on data strategy and personal branding for students.</p>
+                <a href="SERTIFIKAT SKILL CENTER 2026.pdf" class="btn-cert" target="_blank">📄 View Certificate</a>
+            </div>
+            <div class="speak-card">
+                <div class="speak-icon">🎓</div>
+                <h4>Pemateri Scholarship Sharing</h4>
+                <p>Shared insights, tips, and personal journey on securing academic scholarships and maintaining grades.</p>
+                <a href="Pembicara NCE.pdf" class="btn-cert" target="_blank">📄 View Certificate</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: CONTACT (Floating Bento & Dynamic BG) -->
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            
+            <p class="pre-title" style="text-align: center; color: var(--pink-accent); font-weight: 700; letter-spacing: 2px;">GET IN TOUCH</p>
+            <h2 class="contact-main-title">Let's Collaborate</h2>
+            <p class="contact-subtitle">Have a project in mind, an opportunity, or just want to connect? Let's talk!</p>
+
+            <!-- FLOATING PILLS CONTAINER -->
+            <div class="floating-contact-grid">
+                
+                <!-- 1. WhatsApp Pill -->
+                <a href="https://wa.me/6289657579772" target="_blank" class="contact-pill floating-item item-1">
+                    <span class="pill-icon">📞</span>
+                    <span class="pill-text">WhatsApp</span>
+                    <span class="pill-arrow">↗</span>
+                </a>
+
+                <!-- 2. Email Pill -->
+                <a href="mailto:nisanajla06@gmail.com" class="contact-pill floating-item item-2">
+                    <span class="pill-icon">✉️</span>
+                    <span class="pill-text">Email</span>
+                    <span class="pill-arrow">↗</span>
+                </a>
+
+                <!-- 3. LinkedIn Pill -->
+                <a href="https://linkedin.com/in/khairunnisa-najla-nugrahaini" target="_blank" class="contact-pill floating-item item-3">
+                    <span class="pill-icon">💼</span>
+                    <span class="pill-text">LinkedIn</span>
+                    <span class="pill-arrow">↗</span>
+                </a>
+
+                <!-- 4. Instagram Pill -->
+                <a href="https://instagram.com/khrnsanjla_" target="_blank" class="contact-pill floating-item item-4">
+                    <span class="pill-icon">📸</span>
+                    <span class="pill-text">Instagram</span>
+                    <span class="pill-arrow">↗</span>
+                </a>
+
+            </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Khairunnisa Najla. Designed with passion.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <!-- Tombol Kembali ke Atas -->
+<a href="#" class="back-to-top" id="backToTopBtn" title="Back to Top">
+    ↑
+</a>
+</body>
+</html>
